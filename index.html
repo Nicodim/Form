@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chocolate editor</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/3.6.1/fabric.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+
+<body>
+    <section class="form">
+        <div class="form-wrapper">
+
+            <canvas class="canvas" id="canvas"></canvas>
+            <img class="contur" src="/img/heart.png" alt="heart-img">
+            <img class="contur" src="/img/heart.png" alt="heart-img">
+            <img class="contur" src="/img/heart.png" alt="heart-img">
+            <img class="contur" src="/img/heart.png" alt="heart-img">
+            <div class="options">
+                <ul class="option-list">
+                    <li class="option-item option-form" id="stage-1">
+                        <ul class="form-list">
+                            <li class="form-option" id="opt-1">
+                                <div class="img-wrapper">
+                                    <img class="form-heart" src="/img/heart.png" alt="heart-img">
+                                </div>
+                            </li>
+                            <li class="form-option" id="opt-2">
+                                <div class="img-wrapper">
+                                    <div class="form-rectangle"></div>
+                                </div>
+                            </li>
+                            <li class="form-option" id="opt-3">
+                                <div class="img-wrapper">
+                                    <img class="form-triangle" src="/img/triangle.png" alt="triangle-img">
+                                </div>
+                            </li>
+                            <li class="form-option" id="opt-4">
+                                <div class="img-wrapper">
+                                    <div class="form-square"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="option-item hidden option-size" id="stage-2">
+                        <div class="size-container" id="square-1">
+                            <div class="size-wrapper">
+                                <div class="square-size big-size">
+                                    <div class="size-form big-form"></div>
+                                </div>
+                                <div class="square-size small-size">
+                                    <div class="size-form small-form"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="size-container" id="square-2">
+                            <div class="size-wrapper">
+                                <div class="square-size big-size">
+                                    <img class="big-trngl" src="/img/triangle.png" alt="triangle-img">
+                                </div>
+                                <div class="square-size small-size">
+                                    <img class="small-trngl" src="/img/triangle.png" alt="triangle-img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="size-container" id="square-3">
+                            <div class="size-wrapper">
+                                <div class="square-size big-size">
+                                    <img class="big-trngl" src="/img/triangle.png" alt="triangle-img">
+                                </div>
+                                <div class="square-size small-size">
+                                    <img class="small-trngl" src="/img/triangle.png" alt="triangle-img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="size-container" id="square-4">
+                            <div class="size-wrapper">
+                                <div class="square-size big-size">
+                                    <img class="big-trngl" src="/img/triangle.png" alt="triangle-img">
+                                </div>
+                                <div class="square-size small-size">
+                                    <img class="small-trngl" src="/img/triangle.png" alt="triangle-img">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="option-item hidden option-load" id="stage-3">
+                        <input type="file" id="loadImage" name="filename">
+                        <label for="loadImage">
+                            <a class="imageSaver" id="imageSaver" href="#">Save image</a>
+
+                            <button class="Add-text">Add Text</button>
+                                <div id="text-controls">
+                                    <input type="color" value="" id="text-color" size="10">
+                                    <label for="font-family" style="display:inline-block">Font family:</label>
+                                    <select id="font-family">
+                                        <option value="arial">Arial</option>
+                                        <option value="helvetica" selected>Helvetica</option>
+                                        <option value="myriad pro">Myriad Pro</option>
+                                        <option value="delicious">Delicious</option>
+                                        <option value="verdana">Verdana</option>
+                                        <option value="georgia">Georgia</option>
+                                        <option value="courier">Courier</option>
+                                        <option value="comic sans ms">Comic Sans MS</option>
+                                        <option value="impact">Impact</option>
+                                        <option value="monaco">Monaco</option>
+                                        <option value="optima">Optima</option>
+                                        <option value="hoefler text">Hoefler Text</option>
+                                        <option value="plaster">Plaster</option>
+                                        <option value="engagement">Engagement</option>
+                                    </select>
+                                    <!-- <div>
+                                        <label for="text-stroke-width">Stroke width:</label>
+                                        <input type="range" value="1" min="1" max="5" id="text-stroke-width">
+                                    </div>
+                                    <div>
+                                        <label for="text-font-size">Font size:</label>
+                                        <input type="range" value="" min="1" max="120" step="1" id="text-font-size">
+                                    </div>
+                                    <div>
+                                        <label for="text-line-height">Line height:</label>
+                                        <input type="range" value="" min="0" max="10" step="0.1" id="text-line-height">
+                                    </div> -->
+                                </div>
+                                <div id="text-controls-additional">
+                                    <input type='checkbox' name='fonttype' id="text-cmd-bold">
+                                    Bold
+
+                                    <input type='checkbox' name='fonttype' id="text-cmd-italic">
+                                    Italic
+
+                                    <input type='checkbox' name='fonttype' id="text-cmd-underline">
+                                    Underline
+
+                                    <input type='checkbox' name='fonttype' id="text-cmd-linethrough">
+                                    Linethrough
+
+                                    <input type='checkbox' name='fonttype' id="text-cmd-overline">
+                                    Overline
+
+                                </div>
+                    </li>
+                    <!-- <li class="option-item option-email">
+                        <label for="email" class="email-label">
+                            <input type="email" id="email" class="email-input" name="filename">mail
+                        </label>
+                    </li> -->
+                </ul>
+                </d>
+            </div>
+    </section>
+    <!-- <script src="js/additional.js"></script> -->
+    <script src="js/script.js"></script>
+    <script src="js/delegation.js"></script>
+
+</body>
+
+</html>

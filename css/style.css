@@ -1,0 +1,288 @@
+body {
+    background-color: rgb(252, 213, 213);
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.form-wrapper {
+    margin: 0 auto;
+    width: 100%;
+    min-height: 300px;
+}
+
+.canvas-container {
+    display: block;
+    position: relative !important;
+    width: 400px;
+    height: 346px;
+    margin: 0 auto;
+    overflow: hidden;
+    touch-action: none;
+    user-select: none;
+    cursor: move;
+    border: 2px solid #FA245C;
+}
+
+.canvas {
+    /* display: block; */
+    position: absolute;
+    width: 100% !important;
+    height: 100% !important;
+    left: 0px;
+    top: 0px;
+    background-color: transparent;
+}
+.contur {
+    position:absolute;
+    width: 186px;
+    height: 186px;
+    top: 12%;
+    left: 43%;
+    touch-action: none;
+    user-select: none;
+}
+
+.options {
+    margin: 0 auto;
+    padding: 0;
+}
+
+.option-list {
+    position: relative;
+    width: 75%;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.option-item {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    -webkit-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
+    text-align: center;
+}
+
+.show {
+    display: block;
+}
+
+.hidden {
+    transform: translateY(50px);
+    -webkit-transform: translateY(50px);
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+}
+.form-list {
+    display: flex;
+    width: 80%;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    align-items: center;
+    flex-direction: row;
+}
+
+.form-option {
+margin: 0 10px;
+}
+
+.img-wrapper {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: auto;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
+}
+
+.form-heart {
+    position: absolute;
+    width: 140px;
+    height: 121px;
+    left: 50%;
+    margin-left: -70px;
+    top: 50%;
+    margin-top: -60.5px;
+    -webkit-transition: all 0.26s ease-out;
+    transition: all 0.26s ease-out;
+}
+
+.form-triangle {
+    position: absolute;
+    width: 140px;
+    height: 121px;
+    left: 50%;
+    margin-left: -70px;
+    top: 50%;
+    margin-top: -60.5px;
+    -webkit-transition: all 0.26s ease-out;
+    transition: all 0.26s ease-out;
+}
+
+.form-rectangle {
+    position: absolute;
+    width: 90px;
+    height: 130px;
+    left: 50%;
+    margin-left: -45px;
+    top: 50%;
+    margin-top: -65px;
+    border: 6px solid black;
+    border-radius: 3%;
+    -webkit-transition: all 0.26s ease-out;
+    transition: all 0.26s ease-out;
+}
+
+.form-square {
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    left: 50%;
+    margin-left: -65px;
+    top: 50%;
+    margin-top: -65px;
+    border: 6px solid black;
+    border-radius: 3%;
+    -webkit-transition: all 0.26s ease-out;
+    transition: all 0.26s ease-out;
+}
+
+.form-triangle:hover,
+.form-heart:hover,
+.form-square:hover,
+.form-rectangle:hover,
+.big-form:hover,
+.small-form:hover,
+.big-trngl:hover,
+.small-trngl:hover {
+    transform: scale(1.05);
+}
+
+
+.option-size {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.size-wrapper {
+    display: flex;
+    flex-direction: row;
+    /* position: relative; */
+    margin: auto;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
+}
+
+#square-1,
+#square-2,
+#square-3,
+#square-4 {
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.size-wrapper .square-size {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: auto;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
+}
+
+.big-form {
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    left: 45%;
+    margin-left: -63px;
+    top: 48%;
+    margin-top: -65px;
+    border: 6px solid black;
+    border-radius: 3%;
+    -webkit-transition: all 0.26s ease-out;
+    transition: all 0.26s ease-out;
+}
+
+.small-form {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    left: 62%;
+    margin-left: -64px;
+    top: 61%;
+    margin-top: -65px;
+    border: 6px solid black;
+    border-radius: 3%;
+    -webkit-transition: all 0.26s ease-out;
+    transition: all 0.26s ease-out;
+}
+
+.big-trngl {
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    left: 47%;
+    margin-left: -63px;
+    top: 48%;
+    margin-top: -65px;
+    border-radius: 3%;
+    -webkit-transition: all 0.26s ease-out;
+    transition: all 0.26s ease-out;
+}
+
+.small-trngl {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    left: 66%;
+    margin-left: -64px;
+    top: 61%;
+    margin-top: -65px;
+    border-radius: 3%;
+    -webkit-transition: all 0.26s ease-out;
+    transition: all 0.26s ease-out;
+}
+
+.imageSaver {
+    color: #777;
+    display: block;
+    background-color: #ccc; 
+    width: 360px;
+    padding: 10px 20px;
+    margin: 0 auto;
+    margin-top: 2px;
+    text-decoration:none;
+}
