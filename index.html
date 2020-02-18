@@ -89,49 +89,70 @@
                         </div>
                     </li>
                     <li class="option-item hidden option-load" id="stage-3">
-                        <input type="file" id="loadImage" name="filename">
-                        <label for="loadImage">
-                            <a class="imageSaver" id="imageSaver" href="#">Save image</a>
+                        <div class="img-prop">
+                            <input class="visually-hidden" type="file" id="loadImage" name="filename">
+                            <label for="loadImage">
+                                <i class="fas fa-cloud-upload-alt fa-icon"></i>
+                            </label>
 
-                            <button class="Add-text">Add Text</button>
-                            <div class="controls-container">
-                                <div id="text-controls">
-                                    <input type="color" value="" class="text-color" id="text-color" size="10">
-                                    <label for="font-family" style="display:inline-block">Font family:</label>
-                                    <select id="font-family">
-                                        <option value="arial">Arial</option>
-                                        <option value="helvetica" selected>Helvetica</option>
-                                        <option value="myriad pro">Myriad Pro</option>
-                                        <option value="delicious">Delicious</option>
-                                        <option value="verdana">Verdana</option>
-                                        <option value="georgia">Georgia</option>
-                                        <option value="courier">Courier</option>
-                                        <option value="comic sans ms">Comic Sans MS</option>
-                                        <option value="impact">Impact</option>
-                                        <option value="monaco">Monaco</option>
-                                        <option value="optima">Optima</option>
-                                        <option value="hoefler text">Hoefler Text</option>
-                                        <option value="plaster">Plaster</option>
-                                        <option value="engagement">Engagement</option>
-                                    </select>
-                                </div>
-                                <div id="text-controls-additional">
-                                    <input type='checkbox' name='fonttype' id="text-cmd-bold">
-                                    Bold
+                            <a class="Add-text">
+                                <i class="fas fa-font  fa-icon"></i>
+                            </a>
+                        </div>
+                        <!-- <a class="imageSaver" id="imageSaver" href="#">Save image</a> -->
 
-                                    <input type='checkbox' name='fonttype' id="text-cmd-italic">
-                                    Italic
-
-                                    <input type='checkbox' name='fonttype' id="text-cmd-underline">
-                                    Underline
-
-                                    <input type='checkbox' name='fonttype' id="text-cmd-linethrough">
-                                    Linethrough
-
-                                    <input type='checkbox' name='fonttype' id="text-cmd-overline">
-                                    Overline
-                                </div>
+                        <div class="controls-container hidden">
+                            <div class="text-controls" id="text-controls">
+                                <input type="color" value="" class="text-color visually-hidden" id="text-color" size="10">
+                                <label for="text-color">
+                                    <i class="fas fa-palette fa-icon"></i>
+                                </label>
+                                <label for="font-family" style="display:inline-block"></label>
+                                <select id="font-family">
+                                    <option value="arial">Arial</option>
+                                    <option value="helvetica" selected>Helvetica</option>
+                                    <option value="myriad pro">Myriad Pro</option>
+                                    <option value="delicious">Delicious</option>
+                                    <option value="verdana">Verdana</option>
+                                    <option value="georgia">Georgia</option>
+                                    <option value="courier">Courier</option>
+                                    <option value="comic sans ms">Comic Sans MS</option>
+                                    <option value="impact">Impact</option>
+                                    <option value="monaco">Monaco</option>
+                                    <option value="optima">Optima</option>
+                                    <option value="hoefler text">Hoefler Text</option>
+                                    <option value="plaster">Plaster</option>
+                                    <option value="engagement">Engagement</option>
+                                </select>
                             </div>
+                            <div class="controls-additional" id="text-controls-additional">
+
+                                <input class="visually-hidden" type='checkbox' name='fonttype' id="text-cmd-bold">
+                                <label for="text-cmd-bold"> 
+                                    <i class="fas fa-bold fa-icon"></i>
+                                 </label>
+
+                                <input class="visually-hidden" type='checkbox' name='fonttype' id="text-cmd-italic">
+                                <label for="text-cmd-italic"> 
+                                    <i class="fas fa-pizza-slice fa-icon"></i>
+                                </label>
+
+                                <input class="visually-hidden" type='checkbox' name='fonttype' id="text-cmd-underline">
+                                <label for="text-cmd-underline">
+                                    <i class="fas fa-underline fa-icon"></i>
+                                </label>
+
+                                <input class="visually-hidden" type='checkbox' name='fonttype' id="text-cmd-linethrough">
+                                <label for="text-cmd-linethrough">
+                                    <i class="fas fa-strikethrough fa-icon"></i>
+                                </label>
+
+                                <input class="visually-hidden" type='checkbox' name='fonttype' id="text-cmd-overline">
+                                <label for="text-cmd-overline">
+                                    <i class="fab fa-reddit-alien fa-icon"></i>
+                                </label>
+                            </div>
+                        </div>
                     </li>
                     <!-- <li class="option-item option-email">
                         <label for="email" class="email-label">
