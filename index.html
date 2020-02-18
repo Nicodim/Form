@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <title>Chocolate editor</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css"
+        integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/3.6.1/fabric.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
@@ -92,8 +94,9 @@
                             <a class="imageSaver" id="imageSaver" href="#">Save image</a>
 
                             <button class="Add-text">Add Text</button>
+                            <div class="controls-container">
                                 <div id="text-controls">
-                                    <input type="color" value="" id="text-color" size="10">
+                                    <input type="color" value="" class="text-color" id="text-color" size="10">
                                     <label for="font-family" style="display:inline-block">Font family:</label>
                                     <select id="font-family">
                                         <option value="arial">Arial</option>
@@ -127,8 +130,8 @@
 
                                     <input type='checkbox' name='fonttype' id="text-cmd-overline">
                                     Overline
-
                                 </div>
+                            </div>
                     </li>
                     <!-- <li class="option-item option-email">
                         <label for="email" class="email-label">

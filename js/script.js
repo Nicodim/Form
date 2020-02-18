@@ -1,7 +1,5 @@
 (function () {
-	// let $ = function (id) {
-	// 	return document.getElementById(id)
-	// };
+
 	let canvas = new fabric.Canvas('canvas');
 	let Add_text = document.querySelector('.Add-text');
 	let Text_color = document.getElementById('text-color');
@@ -10,7 +8,7 @@
 	canvas.setWidth(300);
 
 	//______________load img
-	
+
 	let imageLoader = document.getElementById('loadImage');
 
 	imageLoader.addEventListener('change', handleImage, false);
@@ -36,7 +34,7 @@
 	function saveImage(e) {
 		this.href = canvas.toDataURL({
 			format: 'jpeg',
-			quality: 0.8
+			quality: 0.8,
 		});
 		this.download = 'test.png'
 	}
@@ -54,19 +52,19 @@
 			fill: '#333',
 			fontSize: 50
 		}));
+		// canvas.setOverlayImage('/img/heart.png', canvas.renderAll.bind(canvas));
 	}
 
-	Text_color.onchange = function () {
-		console.log(canvas);
-		canvas.getActiveObject().setFill(this.value);
-
+	$('#text-color').on('change', function () {
+		canvas.getActiveObject().set({ fill: this.value });
 		canvas.renderAll();
-	};
+	});
 
-	Font_family.onchange = function () {
-		canvas.getActiveObject().setFontFamily(this.value);
+	$('#font-family').on('change', function () {
+		canvas.getActiveObject().set({ fontFamily: this.value });
 		canvas.renderAll();
-	};
+	});
+
 
 	radios5 = document.getElementsByName("fonttype");  // wijzig naar button
 	for (var i = 0, max = radios5.length; i < max; i++) {

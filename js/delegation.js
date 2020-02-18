@@ -10,7 +10,6 @@
     let size_content = document.querySelectorAll('.square-size');
     let size = document.querySelector('.canvas-container');
     let contur = document.querySelectorAll('.contur');
-    let canvas = document.getElementById('canvas');
 
 
 
@@ -92,13 +91,13 @@
             if (target && target.classList.contains('big-size')) {
                 size.style.width = '500px';
                 size.style.height = '446px';
-                canvas.setWidth(500);
-                canvas.setHeight(446)
-                canvas.renderAll();
+                // canvas.setWidth(500);
+                // canvas.setHeight(446)
+                // canvas.renderAll.bind(canvas);
             } else if (target && target.classList.contains('small-size')) {
                 size.style.width = '300px';
                 size.style.height = '246px';
-                canvas.renderAll();
+                // canvas.renderAll.bind(canvas);
             }
         });
     };
