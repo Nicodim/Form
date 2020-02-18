@@ -4,7 +4,6 @@
 	let canvas = new fabric.Canvas('canvas');
 	let Add_text = document.querySelector('.Add-text');
 	let controls_container = document.querySelector('.controls-container');
-	let Font_family = document.getElementById('font-family');
 	canvas.setHeight(300);
 	canvas.setWidth(300);
 

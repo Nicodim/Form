@@ -303,7 +303,8 @@ margin: 0 10px;
     transition: all 0.4s ease-out;
 }
 
-.fa-icon:hover {
+.fa-icon:hover,
+.mail-link:hover {
     background: #ef0d33;
     color: white;
     border-color: #ef0d33;
@@ -325,4 +326,18 @@ margin: 0 10px;
 
 .text-controls {
     margin-bottom: 20px;
+}
+
+.mail-link {
+    display: block;
+    text-decoration: none;
+    color: white;
+    width:80px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    border: 1px solid white;
+    -webkit-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
+    border-radius: 5%;
+    margin-bottom: 10px;
 }

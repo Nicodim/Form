@@ -10,6 +10,7 @@
     let size_content = document.querySelectorAll('.square-size');
     let size = document.querySelector('.canvas-container');
     let contur = document.querySelectorAll('.contur');
+    let mail_link = document.querySelector('.mail-link')
 
 
 
@@ -101,4 +102,9 @@
             }
         });
     };
+
+    mail_link.addEventListener('click', function() {
+        hideOption(0);
+        showOption(3);
+    });
 })();
