@@ -56,31 +56,22 @@
 		}));
 	}
 
-	// Text_color.onchange = function () {
-	// 	console.log(canvas);
-	// 	canvas.getActiveObject().setFill(this.value);
+	Text_color.onchange = function () {
+		console.log(canvas);
+		canvas.getActiveObject().setFill(this.value);
 
-	// 	canvas.renderAll();
-	// };
-
-	// Font_family.onchange = function () {
-	// 	canvas.getActiveObject().setFontFamily(this.value);
-	// 	canvas.renderAll();
-	// };
-
-	$('#text-color').on('change', function() {
-		canvas.getActiveObject().set({fill: this.value});
 		canvas.renderAll();
-	});
+	};
 
-	$('#font-family').on('change', function() {
-		canvas.getActiveObject().set({fontFamily: this.value});
+	Font_family.onchange = function () {
+		canvas.getActiveObject().setFontFamily(this.value);
 		canvas.renderAll();
-	});
+	};
 
-	radios5 = $('[name="fonttype"]');  // wijzig naar button
+	radios5 = document.getElementsByName("fonttype");  // wijzig naar button
 	for (var i = 0, max = radios5.length; i < max; i++) {
 		radios5[i].onclick = function () {
+
 			if (document.getElementById(this.id).checked == true) {
 				if (this.id == "text-cmd-bold") {
 					canvas.getActiveObject().set("fontWeight", "bold");

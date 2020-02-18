@@ -92,13 +92,13 @@
             if (target && target.classList.contains('big-size')) {
                 size.style.width = '500px';
                 size.style.height = '446px';
-                // canvas.setWidth(500);
-                // canvas.setHeight(446)
-                // canvas.renderAll();
+                canvas.setWidth(500);
+                canvas.setHeight(446)
+                canvas.renderAll();
             } else if (target && target.classList.contains('small-size')) {
                 size.style.width = '300px';
                 size.style.height = '246px';
-                // canvas.renderAll();
+                canvas.renderAll();
             }
         });
     };
