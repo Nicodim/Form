@@ -9,8 +9,7 @@
     let sizeWrapper = document.querySelectorAll('.size-wrapper');
     let size_content = document.querySelectorAll('.square-size');
     let size = document.querySelector('.canvas-container');
-    let contur = document.querySelectorAll('.contur');
-    let mail_link = document.querySelector('.mail-link')
+    let mail_link = document.querySelector('.mail-link');
 
 
 
@@ -43,20 +42,20 @@
         }
     }
 
-    function hideContur(a) {
-        for (let i = a; i < contur.length; i++) {
-            contur[i].classList.remove('show');
-            contur[i].classList.add('hidden');
-        }
-    }
-    hideContur(0);
+    // function hideContur(a) {
+    //     for (let i = a; i < contur.length; i++) {
+    //         contur[i].classList.remove('show');
+    //         contur[i].classList.add('hidden');
+    //     }
+    // }
+    // hideContur(0);
 
-    function showContur(b) {
-        if (contur[b].classList.contains('hidden')) {
-            contur[b].classList.remove('hidden');
-            contur[b].classList.add('show');
-        }
-    }
+    // function showContur(b) {
+    //     if (contur[b].classList.contains('hidden')) {
+    //         contur[b].classList.remove('hidden');
+    //         contur[b].classList.add('show');
+    //     }
+    // }
 
     info.addEventListener('click', function (event) {
         let target = event.target.closest('.form-option');
@@ -71,6 +70,7 @@
                     showContent(i);
                     // hideContur(0);
                     // showContur(i);
+                          // canvas.setOverlayImage(contur[b], canvas.renderAll.bind(canvas));
                     break;
                 }
             }
@@ -89,17 +89,17 @@
                     }
                 }
             }
-            if (target && target.classList.contains('big-size')) {
-                size.style.width = '500px';
-                size.style.height = '446px';
+            // if (target && target.classList.contains('big-size')) {
+            //     size.style.width = '500px';
+            //     size.style.height = '446px';
                 // canvas.setWidth(500);
                 // canvas.setHeight(446)
                 // canvas.renderAll.bind(canvas);
-            } else if (target && target.classList.contains('small-size')) {
-                size.style.width = '300px';
-                size.style.height = '246px';
-                // canvas.renderAll.bind(canvas);
-            }
+            // } else if (target && target.classList.contains('small-size')) {
+            //     size.style.width = '300px';
+            //     size.style.height = '246px';
+            //     // canvas.renderAll.bind(canvas);
+            // }
         });
     };
 

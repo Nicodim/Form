@@ -29,7 +29,7 @@ input[type="radio"].visually-hidden {
     display: block;
     position: relative !important;
     width: 400px;
-    height: 346px;
+    height: 400px;
     margin: 0 auto;
     overflow: hidden;
     touch-action: none;
@@ -49,12 +49,13 @@ input[type="radio"].visually-hidden {
 }
 .contur {
     position:absolute;
-    width: 186px;
-    height: 186px;
-    top: 12%;
-    left: 43%;
+    top: 10px;
+    left: 475px;
+    /* top: -402px;
+    left: 467px; */
     touch-action: none;
     user-select: none;
+    z-index: -1;
 }
 
 .options {
@@ -99,9 +100,10 @@ input[type="radio"].visually-hidden {
 }
 .form-list {
     display: flex;
-    width: 80%;
+    width: 59%;
     list-style: none;
     padding: 0;
+    justify-content: space-between;
     margin: 0 auto;
     align-items: center;
     flex-direction: row;
@@ -124,8 +126,8 @@ margin: 0 10px;
 
 .form-heart {
     position: absolute;
-    width: 140px;
-    height: 121px;
+    width: 120px;
+    height: 111px;
     left: 50%;
     margin-left: -70px;
     top: 50%;
@@ -148,40 +150,42 @@ margin: 0 10px;
 
 .form-rectangle {
     position: absolute;
-    width: 90px;
-    height: 130px;
+    width: 120px;
+    height: 70px;
     left: 50%;
-    margin-left: -45px;
-    top: 50%;
-    margin-top: -65px;
+    top: 23%;
+    margin-left: -67px;
     border: 6px solid black;
     border-radius: 3%;
     -webkit-transition: all 0.26s ease-out;
     transition: all 0.26s ease-out;
 }
 
-.form-square {
+.form-circle {
     position: absolute;
-    width: 130px;
-    height: 130px;
+    width: 100px;
+    height: 100px;
     left: 50%;
-    margin-left: -65px;
-    top: 50%;
+    margin-left: -57px;
+    top: 51%;
     margin-top: -65px;
     border: 6px solid black;
-    border-radius: 3%;
+    border-radius: 50%;
     -webkit-transition: all 0.26s ease-out;
     transition: all 0.26s ease-out;
 }
 
-.form-triangle:hover,
 .form-heart:hover,
-.form-square:hover,
+.form-circle:hover,
 .form-rectangle:hover,
 .big-form:hover,
 .small-form:hover,
-.big-trngl:hover,
-.small-trngl:hover {
+.big-heart:hover,
+.big-rectangle:hover,
+.small-rectangle:hover,
+.small-heart:hover,
+.big-circle:hover,
+.small-circle:hover  {
     transform: scale(1.05);
 }
 
@@ -208,7 +212,7 @@ margin: 0 10px;
 #square-3,
 #square-4 {
     position: relative;
-    margin: auto;
+    margin: 0 auto;
     overflow: hidden;
     cursor: pointer;
 }
@@ -252,7 +256,7 @@ margin: 0 10px;
     transition: all 0.26s ease-out;
 }
 
-.big-trngl {
+.big-heart {
     position: absolute;
     width: 130px;
     height: 130px;
@@ -265,7 +269,7 @@ margin: 0 10px;
     transition: all 0.26s ease-out;
 }
 
-.small-trngl {
+.small-heart {
     position: absolute;
     width: 70px;
     height: 70px;
@@ -278,23 +282,69 @@ margin: 0 10px;
     transition: all 0.26s ease-out;
 }
 
-.imageSaver {
-    color: #777;
-    display: block;
-    background-color: #ccc; 
-    width: 360px;
-    padding: 10px 20px;
-    margin: 0 auto;
-    margin-top: 2px;
-    text-decoration:none;
+.big-rectangle {
+    position: absolute;
+    width: 125px;
+    height: 75px;
+    left: 47%;
+    margin-left: -63px;
+    top: 48%;
+    margin-top: -65px;
+    border: 5px solid black;
+    border-radius: 3%;
+    -webkit-transition: all 0.26s ease-out;
+    transition: all 0.26s ease-out;
 }
+
+.small-rectangle {
+    position: absolute;
+    width: 95px;
+    height: 45px;
+    left: 66%;
+    margin-left: -80px;
+    top: 56%;
+    margin-top: -65px;
+    border: 5px solid black;
+    border-radius: 3%;
+    -webkit-transition: all 0.26s ease-out;
+    transition: all 0.26s ease-out;
+}
+
+.big-circle {
+    position: absolute;
+    width: 125px;
+    height: 125px;
+    left: 47%;
+    margin-left: -63px;
+    top: 48%;
+    margin-top: -65px;
+    border: 5px solid black;
+    border-radius: 50%;
+    -webkit-transition: all 0.26s ease-out;
+    transition: all 0.26s ease-out;
+}
+
+.small-circle {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    left: 66%;
+    margin-left: -64px;
+    top: 61%;
+    margin-top: -65px;
+    border: 5px solid black;
+    border-radius: 50%;
+    -webkit-transition: all 0.26s ease-out;
+    transition: all 0.26s ease-out;
+}
+
 
 .fa-icon {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    border: 2px solid white;
-    color: white;
+    border: 2px solid black;
+    color: black;
     line-height: 50px !important;
     text-align: center;
     font-size: 21px;
@@ -331,11 +381,11 @@ margin: 0 10px;
 .mail-link {
     display: block;
     text-decoration: none;
-    color: white;
+    color: black;
     width:80px;
     margin: 0 auto;
     padding: 10px 20px;
-    border: 1px solid white;
+    border: 1px solid black;
     -webkit-transition: all 0.4s ease-out;
     transition: all 0.4s ease-out;
     border-radius: 5%;
