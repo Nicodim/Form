@@ -9,6 +9,10 @@
 	let content = document.querySelectorAll('.option-item');
 	let contur = document.querySelectorAll('.contur');
 	let controls_container = document.querySelector('.controls-container');
+    let sizeWrapper = document.querySelectorAll('.size-wrapper');
+    let size_content = document.querySelectorAll('.square-size');
+    let size = document.querySelector('.canvas-container');
+    let mail_link = document.querySelector('.mail-link');
 	canvas.setHeight(400);
 	canvas.setWidth(400);
 
@@ -32,6 +36,10 @@
 		}
 		reader.readAsDataURL(e.target.files[0]);
 	}
+
+
+	// ________________________________________________________________________________delegation
+
 
 	function hideOption(a) {
         for (let i = a; i < content.length; i++) {
@@ -73,8 +81,6 @@
                     showOption(1);
                     hideContent(0);
                     showContent(i);
-                    // hideContur(0);
-                    // showContur(i);
 					canvas.setOverlayImage('/img/circle-form.png', canvas.renderAll.bind(canvas));
                     break;
                 }
@@ -87,8 +93,6 @@
                     showOption(1);
                     hideContent(0);
                     showContent(i);
-                    // hideContur(0);
-                    // showContur(i);
 					canvas.setOverlayImage('/img/heart-form.png', canvas.renderAll.bind(canvas));
                     break;
                 }
@@ -101,13 +105,42 @@
                     showOption(1);
                     hideContent(0);
                     showContent(i);
-                    // hideContur(0);
-                    // showContur(i);
 					canvas.setOverlayImage('/img/rectangle-form.png', canvas.renderAll.bind(canvas));
                     break;
                 }
             }
         }
+	});
+	
+	for (let i = 0; i < sizeWrapper.length; i++) {
+        sizeWrapper[i].addEventListener('click', function(event) {
+            let target = event.target.closest('.square-size');
+            if (target && target.classList.contains('square-size')) {
+                for (let i = 0; i < size_content.length; i++) {
+                    if (target == size_content[i]) {
+                        hideOption(0);
+                        showOption(2);
+                        break;
+                    }
+                }
+            }
+            // if (target && target.classList.contains('big-size')) {
+            //     size.style.width = '500px';
+            //     size.style.height = '446px';
+                // canvas.setWidth(500);
+                // canvas.setHeight(446)
+                // canvas.renderAll.bind(canvas);
+            // } else if (target && target.classList.contains('small-size')) {
+            //     size.style.width = '300px';
+            //     size.style.height = '246px';
+            //     // canvas.renderAll.bind(canvas);
+            // }
+        });
+    };
+
+    mail_link.addEventListener('click', function() {
+        hideOption(0);
+        showOption(3);
     });
 
 	Add_text.addEventListener('click', function () {
@@ -122,7 +155,6 @@
 			fill: '#333',
 			fontSize: 40
 		}));
-		  // canvas.setOverlayImage('/img/heart-form.png', canvas.renderAll.bind(canvas));
 	}
 	
 	Add_text.addEventListener('click', function() {
