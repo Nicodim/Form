@@ -7,7 +7,6 @@
 	let info = document.querySelector('.form-list');
 	let size_figure = document.querySelectorAll('.size-container');
 	let content = document.querySelectorAll('.option-item');
-	let contur = document.querySelectorAll('.contur');
 	let controls_container = document.querySelector('.controls-container');
     let sizeWrapper = document.querySelectorAll('.size-wrapper');
     let size_content = document.querySelectorAll('.square-size');
@@ -35,6 +34,79 @@
 			img.src = event.target.result;
 		}
 		reader.readAsDataURL(e.target.files[0]);
+		// imageLoader.set value to null
+	}
+
+	Add_text.addEventListener('click', function () {
+		Addtext();
+	});
+
+	function Addtext() {
+		canvas.add(new fabric.IText('Tap and Type', {
+			left: 50,
+			top: 150,
+			fontFamily: 'arial black',
+			fill: '#333',
+			fontSize: 30,
+			fontWeight: 'bold'
+		}));
+	}
+	
+	Add_text.addEventListener('click', function() {
+		controls_container.classList.remove('hidden');
+		controls_container.classList.add('show');
+	})
+
+	$('#text-color').on('change', function () {
+		canvas.getActiveObject().set({ fill: this.value });
+		canvas.renderAll();
+	});
+
+	$('#font-family').on('change', function () {
+		canvas.getActiveObject().set({ fontFamily: this.value });
+		canvas.renderAll();
+	});
+
+
+	let radios5 = $("[name=fonttype]"); // wijzig naar button
+	for (var i = 0, max = radios5.length; i < max; i++) {
+		radios5[i].onclick = function () {
+
+			if (document.getElementById(this.id).checked == true) {
+				if (this.id == "text-cmd-bold") {
+					canvas.getActiveObject().set("fontWeight", "bold");
+				}
+				if (this.id == "text-cmd-italic") {
+					canvas.getActiveObject().set("fontStyle", "italic");
+				}
+				if (this.id == "text-cmd-underline") {
+					canvas.getActiveObject().set("textDecoration", "underline");
+				}
+				if (this.id == "text-cmd-linethrough") {
+					canvas.getActiveObject().set("textDecoration", "line-through");
+				}
+				if (this.id == "text-cmd-overline") {
+					canvas.getActiveObject().set("textDecoration", "overline");
+				}
+			} else {
+				if (this.id == "text-cmd-bold") {
+					canvas.getActiveObject().set("fontWeight", "");
+				}
+				if (this.id == "text-cmd-italic") {
+					canvas.getActiveObject().set("fontStyle", "");
+				}
+				if (this.id == "text-cmd-underline") {
+					canvas.getActiveObject().set("textDecoration", "");
+				}
+				if (this.id == "text-cmd-linethrough") {
+					canvas.getActiveObject().set("textDecoration", "");
+				}
+				if (this.id == "text-cmd-overline") {
+					canvas.getActiveObject().set("textDecoration", "");
+				}
+			}
+			canvas.renderAll();
+		}
 	}
 
 
@@ -119,20 +191,20 @@
                 for (let i = 0; i < size_content.length; i++) {
                     if (target == size_content[i]) {
                         hideOption(0);
-                        showOption(2);
+						showOption(2);
                         break;
                     }
                 }
             }
             // if (target && target.classList.contains('big-size')) {
-            //     size.style.width = '500px';
-            //     size.style.height = '446px';
-                // canvas.setWidth(500);
-                // canvas.setHeight(446)
-                // canvas.renderAll.bind(canvas);
+            //     size.style.width = '450px';
+            //     size.style.height = '450px';
+            //     // canvas.setWidth(500);
+            //     // canvas.setHeight(446);
+            //     // canvas.renderAll.bind(canvas);
             // } else if (target && target.classList.contains('small-size')) {
             //     size.style.width = '300px';
-            //     size.style.height = '246px';
+            //     size.style.height = '300px';
             //     // canvas.renderAll.bind(canvas);
             // }
         });
@@ -140,80 +212,9 @@
 
     mail_link.addEventListener('click', function() {
         hideOption(0);
-        showOption(3);
+		showOption(3);
+		// canvas.clear();
     });
-
-	Add_text.addEventListener('click', function () {
-		Addtext();
-	});
-
-	function Addtext() {
-		canvas.add(new fabric.IText('Tap and Type', {
-			left: 50,
-			top: 150,
-			fontFamily: 'arial black',
-			fill: '#333',
-			fontSize: 40
-		}));
-	}
-	
-	Add_text.addEventListener('click', function() {
-		controls_container.classList.remove('hidden');
-		controls_container.classList.add('show');
-	})
-
-	$('#text-color').on('change', function () {
-		canvas.getActiveObject().set({ fill: this.value });
-		canvas.renderAll();
-	});
-
-	$('#font-family').on('change', function () {
-		canvas.getActiveObject().set({ fontFamily: this.value });
-		canvas.renderAll();
-	});
-
-
-	let radios5 = $("[name=fonttype]"); // wijzig naar button
-	for (var i = 0, max = radios5.length; i < max; i++) {
-		radios5[i].onclick = function () {
-
-			if (document.getElementById(this.id).checked == true) {
-				if (this.id == "text-cmd-bold") {
-					canvas.getActiveObject().set("fontWeight", "bold");
-				}
-				if (this.id == "text-cmd-italic") {
-					canvas.getActiveObject().set("fontStyle", "italic");
-				}
-				if (this.id == "text-cmd-underline") {
-					canvas.getActiveObject().set("textDecoration", "underline");
-				}
-				if (this.id == "text-cmd-linethrough") {
-					canvas.getActiveObject().set("textDecoration", "line-through");
-				}
-				if (this.id == "text-cmd-overline") {
-					canvas.getActiveObject().set("textDecoration", "overline");
-				}
-			} else {
-				if (this.id == "text-cmd-bold") {
-					canvas.getActiveObject().set("fontWeight", "");
-				}
-				if (this.id == "text-cmd-italic") {
-					canvas.getActiveObject().set("fontStyle", "");
-				}
-				if (this.id == "text-cmd-underline") {
-					canvas.getActiveObject().set("textDecoration", "");
-				}
-				if (this.id == "text-cmd-linethrough") {
-					canvas.getActiveObject().set("textDecoration", "");
-				}
-				if (this.id == "text-cmd-overline") {
-					canvas.getActiveObject().set("textDecoration", "");
-				}
-			}
-			canvas.renderAll();
-		}
-	}
-
 })()
 
 
@@ -228,3 +229,5 @@
 	// 	});
 	// 	this.download = 'test.png'
 	// }
+
+	 

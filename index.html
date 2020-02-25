@@ -94,7 +94,8 @@
                                 <label for="text-color">
                                     <i class="fas fa-palette fa-icon"></i>
                                 </label>
-                                <label for="font-family" style="display:inline-block"></label>
+                                <label for="font-family" style="display:inline-block">
+                                </label>
                                 <select id="font-family">
                                     <option value="arial">Arial</option>
                                     <option value="helvetica" selected>Helvetica</option>
@@ -143,16 +144,27 @@
                         </div>
                     </li>
                     <li class="option-item option-email">
-                        <label for="email" class="email-label">
-                            <input type="email" id="email" class="email-input" name="filename">mail
-                        </label>
+                        <div class="box">
+                            <form action="send.php" method="POST"enctype="multipart/form-data" id="form">
+                                <p>Имя</p>
+                                <input placeholder="Представьтесь" name="name" type="text" >
+                                <p>Email</p>
+                                <input placeholder="Укажите почту" name="email" type="text" >
+                                <p>Сообщение</p>
+                                <textarea name="text"></textarea>
+                                <p>Прикрепить файлы</p>
+                                <input type="file" name="myfile[]" multiple id="myfile">
+                                <p><input value="Отправить" type="submit"></p>
+                               </form>
+                        </div>
                     </li>
                 </ul>
                 </d>
             </div>
     </section>
-    <!-- <script src="js/additional.js"></script> -->
     <script src="js/script.js"></script>
+    <script src="js/load.js"></script>
+
     <!-- <script src="js/delegation.js"></script> -->
 
 </body>
