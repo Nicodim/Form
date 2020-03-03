@@ -45,25 +45,56 @@ $shape_input = trim($shape_input);
 $size_input = trim($size_input);
 $img_canvas = trim($img_canvas);
 
-//echo ($img_canvas);
+// echo ($img_canvas);
+// function base64ToImage($base64_string, $output_file) {
+//     $file = fopen($output_file, "wb");
+//    //  $data = explode(',', $base64_string);
+//     fwrite($file, $base64_string);
+//     fclose($file);
+//     return $output_file;
+// }
+// base64ToImage($img_canvas, 'image.png');
 
-function base64ToImage($base64_string, $output_file) {
-    $file = fopen($output_file, "wb");
 
-    //$data = explode(',', $base64_string);
+$temp_file = tempnam(sys_get_temp_dir(), 'foo');
+$img_canvas = $_POST['img-canvas'];
+$img_canvas = str_replace('data:image/png;base64,', '', $img_canvas);
+$img_canvas = str_replace(' ', '+', $img_canvas);
+$data = base64_decode($img_canvas);
+$file = $temp_file . uniqid() . '.png';
+$success = file_put_contents($file, $data);
 
-    fwrite($file, $base64_string);
-    fclose($file);
+// print $success ? $file : 'Unable to save the file.';
+// print $success;
+// print $file;
+
+if(isset($_FILES['image'])){
+    $errors= array();
+    $file_name = $_FILES['image']['name'];
+    $file_size = $_FILES['image']['size'];
+    $file_tmp = $_FILES['image']['tmp_name'];
+    $file_type = $_FILES['image']['type'];
+    $file_ext=strtolower(end(explode('.',$_FILES['image']['name'])));
     
+    $expensions= array("jpeg","jpg","png","pdf");
     
-    return $output_file;
-}
-
-base64ToImage($img_canvas, 'ggg2.png');
-
+    if(in_array($file_ext,$expensions)=== false) {
+       $errors[]="extension not allowed, please choose a PDF, JPEG or PNG file.";
+    }
+    
+    if($file_size > 2097152) {
+       $errors[]='File size must be excately 2 MB';
+    }
+    
+    if(empty($errors)==true) {
+       move_uploaded_file($file_tmp, $file); //The folder where you would like your file to be saved
+       echo "Success";
+    }else{
+       print_r($errors);
+    }
+ }
 
 try { 
-    //base64ToImage($img_canvas, $output_file);
     // $mail->SMTPDebug = SMTP::DEBUG_SERVER;   
     $mail->isSMTP();     
     // Настройки вашей почты
@@ -73,6 +104,7 @@ try {
     $mail->Password   = 'U^PU64zk575j';                               // SMTP password
     $mail->SMTPSecure = 'ssl';         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
     $mail->Port       = 465;
+    $mail->addAttachment($file);
     $mail->setFrom('nicky@webstickprojects.co.il'); // Адрес самой почты
 
     // Получатель письма
@@ -81,7 +113,7 @@ try {
  
 $mail->isHTML(true);                                  // Set email format to HTML
 $mail->Subject = 'shokoladsheli test';
-$mail->Body    = 'Dear '.$name. '<br>Your phone: ' .$phone. '<br>Post: ' .$email. '<br>Comment: ' .$text. '<br>shape: ' .$shape_input. '<br>size: ' .$size_input. '<br>img: '.'<img src="/ggg2.png">';
+$mail->Body    = 'Dear '.$name. '<br>Your phone: ' .$phone. '<br>Post: ' .$email. '<br>Comment: ' .$text. '<br>shape: ' .$shape_input. '<br>size: ' .$size_input;
 
 
 $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';

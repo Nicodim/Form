@@ -15,6 +15,7 @@
 	let mail_link = document.querySelector('.mail-link');
 	let back_btn = document.querySelector('.back-btn');
 	let trash = document.querySelector('.trash');
+	let php_form = document.querySelector('.php-form');
 	canvas.setHeight(400);
 	canvas.setWidth(400);
 
@@ -237,17 +238,34 @@
 	})
 
 	mail_link.addEventListener('click', function () {
-		var convertToImage=function() {
-		canvas.deactivateAll().renderAll();
+		// var convertToImage=function() {
+		// canvas.deactivateAll().renderAll();
 		let dataURL = canvas.toDataURL();
 		document.querySelector('.img-canvas').setAttribute("value", dataURL);
-	}
+	// }
 		hideOption(0);
 		showOption(3);
-		convertToImage();
+		// convertToImage();
 		// canvas.clear();
 	});
+	
+	php_form.addEventListener('submit', function() {
+		document.php_form.reset();
+	});
+
 })()
+
+
+
+
+
+
+
+
+
+
+
+
 
 	// SAVE IMG
 	// let imageSaver = document.getElementById('imageSaver');

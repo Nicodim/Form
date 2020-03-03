@@ -153,8 +153,8 @@
                     </li>
                     <li class="option-item hidden option-email">
                         <div class="box">
-                            <form class="php-form" action="send.php" method="post">
-                                <input class="img-canvas" type='hidden' name='img-canvas' id="img-canvas">
+                            <form class="php-form" enctype='multipart/form-data' action="send.php" method="post">
+                                <input class="img-canvas" type='hidden' name='img-canvas' id="img-canvas" value="">
                                 <input class="shape-input" type='hidden' name='shape-input' id="shape-input" value="shape ">
                                 <input class="size-input" type='hidden' name='size-input' id="size-input" value="size ">
 
