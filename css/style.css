@@ -113,6 +113,7 @@ margin: 0 10px;
     margin: auto;
     overflow: hidden;
     cursor: pointer;
+    background-color: transparent;
     -webkit-transition: all 0.4s ease-out;
     transition: all 0.4s ease-out;
 }
@@ -124,18 +125,9 @@ margin: 0 10px;
     left: 50%;
     margin-left: -70px;
     top: 50%;
-    margin-top: -60.5px;
-    -webkit-transition: all 0.26s ease-out;
-    transition: all 0.26s ease-out;
-}
-
-.form-triangle {
-    position: absolute;
-    width: 140px;
-    height: 121px;
-    left: 50%;
-    margin-left: -70px;
-    top: 50%;
+    text-align: center;
+    font-size: 98px;
+    vertical-align: middle;
     margin-top: -60.5px;
     -webkit-transition: all 0.26s ease-out;
     transition: all 0.26s ease-out;
@@ -253,11 +245,21 @@ margin: 0 10px;
     transition: all 0.26s ease-out;
 }
 
+.small-size,
+.big-size  {
+ box-shadow: transparent;
+}
+
+
+
 .big-heart {
     position: absolute;
     width: 105px;
     height: 105px;
     left: 47%;
+    text-align: center;
+    font-size: 105px;
+    vertical-align: middle;
     margin-left: -48px;
     top: 48%;
     margin-top: -65px;
@@ -271,6 +273,9 @@ margin: 0 10px;
     width: 70px;
     height: 70px;
     left: 66%;
+    text-align: center;
+    font-size: 70px;
+    vertical-align: middle;
     margin-left: -64px;
     top: 61%;
     margin-top: -60px;
@@ -350,6 +355,7 @@ margin: 0 10px;
     transition: all 0.4s ease-out;
 }
 
+.btn:hover,
 .fa-icon:hover,
 .mail-link:hover,
 .next-btn:hover,
@@ -361,7 +367,7 @@ margin: 0 10px;
 }
 
 .img-prop {
-    width: 22%;
+    width: 14%;
     margin: 20px auto;
     display: flex;
     justify-content: space-between;
@@ -379,6 +385,12 @@ margin: 0 10px;
     transition: all 0.4s ease-out;
 }
 
+.controls-box {
+    display: block;
+    -webkit-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
+}
+
 .control-label {
     display: block;
     margin-bottom: 5px;
@@ -392,7 +404,8 @@ margin: 0 10px;
 
 .mail-link,
 .next-btn,
-.back-btn {
+.back-btn,
+.btn {
     display: block;
     text-decoration: none;
     color: black;
@@ -440,13 +453,31 @@ margin: 0 10px;
 }
 
 .php-form {
-    width: 50%;
+    width: 78%;
     display: flex;
     margin: 0 auto;
     flex-direction: column;
 }
 
-/* Select */
+.visible-param {
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.left-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 15px;
+}
+
+.left-column div {
+    margin-bottom: 18px;
+}
+
 .select {
     position: relative;
     margin-bottom: 1rem;
@@ -497,4 +528,10 @@ margin: 0 10px;
 .form-control:hover {
     background-color: rgba(255, 255, 255, 1);
     outline: transparents;
+}
+
+.btn-controls {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
 }

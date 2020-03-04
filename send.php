@@ -101,7 +101,7 @@ try {
     $mail->Host       = 'mail.webstickprojects.co.il';                    // Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
     $mail->Username   = 'nicky@webstickprojects.co.il';                     // SMTP username
-    $mail->Password   = 'U^PU64zk575j';                               // SMTP password
+    $mail->Password   = 'K_4f1RJ{Z@8p';                               // SMTP password
     $mail->SMTPSecure = 'ssl';         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
     $mail->Port       = 465;
     $mail->addAttachment($file);
