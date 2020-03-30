@@ -19,6 +19,7 @@ $text = $_POST['text'];
 $phone = $_POST['phone'];
 $shape_input = $_POST['shape-input'];
 $size_input = $_POST['size-input'];
+$tp_input = $_POST['tp-input'];
 $img_canvas = $_POST['img-canvas'];
 // the function converts all the characters that the user tries to add to the form
 $name = htmlspecialchars($name);
@@ -27,6 +28,7 @@ $text = htmlspecialchars($text);
 $phone = htmlspecialchars($phone);
 $shape_input = htmlspecialchars($shape_input);
 $size_input = htmlspecialchars($size_input);
+$tp_input = htmlspecialchars($tp_input);
 $img_canvas = htmlspecialchars($img_canvas);
 // decodes the url if the user tries to add it to the form.
 $name = urldecode($name);
@@ -35,6 +37,7 @@ $text = urldecode($text);
 $phone = urldecode($phone);
 $shape_input = urldecode($shape_input);
 $size_input = urldecode($size_input);
+$tp_input = urldecode($tp_input);
 $img_canvas = urldecode($img_canvas);
 // remove spaces from the beginning and end of the line
 $name = trim($name);
@@ -43,6 +46,7 @@ $text = trim($text);
 $phone = trim($phone); 
 $shape_input = trim($shape_input);
 $size_input = trim($size_input);
+$tp_input = trim($tp_input);
 $img_canvas = trim($img_canvas);
 
 // echo ($img_canvas);
@@ -101,7 +105,7 @@ try {
     $mail->Host       = 'mail.webstickprojects.co.il';                    // Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
     $mail->Username   = 'nicky@webstickprojects.co.il';                     // SMTP username
-    $mail->Password   = 'K_4f1RJ{Z@8p';                               // SMTP password
+    $mail->Password   = 'b.Q64*AY}q.x';                               // SMTP password
     $mail->SMTPSecure = 'ssl';         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
     $mail->Port       = 465;
     $mail->addAttachment($file);
@@ -113,7 +117,7 @@ try {
  
 $mail->isHTML(true);                                  // Set email format to HTML
 $mail->Subject = 'shokoladsheli test';
-$mail->Body    = 'Dear '.$name. '<br>Your phone: ' .$phone. '<br>Post: ' .$email. '<br>Comment: ' .$text. '<br>shape: ' .$shape_input. '<br>size: ' .$size_input;
+$mail->Body    = 'Dear '.$name. '<br>Your phone: ' .$phone. '<br>Post: ' .$email. '<br>Comment: ' .$text. '<br>shape: ' .$shape_input. '<br>size: ' .$size_input. '<br>toppings: ' .$tp_input;
 
 
 $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
