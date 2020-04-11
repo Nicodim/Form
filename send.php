@@ -4,11 +4,12 @@ ini_set('display_errors', 1);
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\SMTP; 
 // Файлы phpmailer
 require 'phpmailer/PHPMailer.php';
 require 'phpmailer/SMTP.php';
 require 'phpmailer/Exception.php';
+// require 'phpmailer/phpmailer.lang-he.php';
 // Instantiation and passing `true` enables exceptions
 $mail = new PHPMailer(true);
 
@@ -49,15 +50,6 @@ $size_input = trim($size_input);
 $tp_input = trim($tp_input);
 $img_canvas = trim($img_canvas);
 
-// echo ($img_canvas);
-// function base64ToImage($base64_string, $output_file) {
-//     $file = fopen($output_file, "wb");
-//    //  $data = explode(',', $base64_string);
-//     fwrite($file, $base64_string);
-//     fclose($file);
-//     return $output_file;
-// }
-// base64ToImage($img_canvas, 'image.png');
 
 
 $temp_file = tempnam(sys_get_temp_dir(), 'foo');
@@ -68,9 +60,6 @@ $data = base64_decode($img_canvas);
 $file = $temp_file . uniqid() . '.png';
 $success = file_put_contents($file, $data);
 
-// print $success ? $file : 'Unable to save the file.';
-// print $success;
-// print $file;
 
 if(isset($_FILES['image'])){
     $errors= array();
@@ -101,6 +90,9 @@ if(isset($_FILES['image'])){
 try { 
     // $mail->SMTPDebug = SMTP::DEBUG_SERVER;   
     $mail->isSMTP();     
+    $mail->CharSet = 'utf-8';
+   //  $mail->SetLanguage('he', PHPMAILER_LANGS);
+    $mail->SetLanguage("he");
     // Настройки вашей почты
     $mail->Host       = 'mail.webstickprojects.co.il';                    // Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
@@ -112,12 +104,12 @@ try {
     $mail->setFrom('nicky@webstickprojects.co.il'); // Адрес самой почты
 
     // Получатель письма
-    $mail->addAddress($email); 
-    // $mail->addAddress('youremail@gmail.com'); // Ещё один, если нужен
+    $mail->addAddress('nickwebstick@gmail.com'); 
+   //  $mail->addAddress('alinawebstick@gmail.com'); // Ещё один, если нужен
  
 $mail->isHTML(true);                                  // Set email format to HTML
 $mail->Subject = 'shokoladsheli test';
-$mail->Body    = 'Dear '.$name. '<br>Your phone: ' .$phone. '<br>Post: ' .$email. '<br>Comment: ' .$text. '<br>shape: ' .$shape_input. '<br>size: ' .$size_input. '<br>toppings: ' .$tp_input;
+$mail->Body  ='<div dir="rtl">'.$name. '<br>טלפון: ' .$phone. '<br>מייל: ' .$email. '<br>תגובה: ' .$text. '<br>טופס: ' .$shape_input. '<br>גודל: ' .$size_input. '<br>תוספות: ' .$tp_input.'</div>';                   
 
 
 $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';

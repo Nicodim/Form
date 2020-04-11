@@ -16,8 +16,8 @@
 	let back_btn = document.querySelector('.back-btn');
 	let trash = document.querySelector('.trash');
 	let php_form = document.querySelector('.php-form');
-	canvas.setHeight(400);
-	canvas.setWidth(400);
+	canvas.setHeight(300);
+	canvas.setWidth(300);
 
 	//______________load img
 
@@ -35,8 +35,8 @@
 					left: 10,
 					top: 10,
 				})
-				imgInstance.scaleToHeight(380);
-				imgInstance.scaleToWidth(380);
+				imgInstance.scaleToHeight(280);
+				imgInstance.scaleToWidth(280);
 				canvas.add(imgInstance);
 			}
 			img.src = event.target.result;
@@ -65,10 +65,10 @@
 	}
 
 	Add_text.addEventListener('click', function () {
-		// controls_container.classList.remove('hidden');
-		// controls_container.classList.add('show');
 		controls_box.classList.remove('hidden');
 		controls_box.classList.add('show');
+		controls_container.classList.remove('hidden');
+		controls_container.classList.add('show');
 	})
 
 	trash.addEventListener('click', function () {
@@ -93,16 +93,15 @@
 		let arr = [];
 		let check = $('.input-checkbox:checked');
 		if (check) {
-		check.toArray().map(el => arr.push(el.value))
-		console.log(arr);
-		let info = arr.join('. ');
-		$('.tp-input').attr("value", info);
-		$('.visible-tp').html('תוספת: ' + info);
+			check.toArray().map(el => arr.push(el.value))
+			let info = arr.join(', ');
+			$('.tp-input').attr("value", info);
+			$('.visible-tp').html('תוספת: ' + info);
 		}
-		if ($('input[type=checkbox]:checked').length >= 3) {
-			$('input[type=checkbox]:not(:checked)').attr('disabled', "disabled");
+		if ($('.input-checkbox:checked').length >= 2) {
+			$('.input-checkbox:not(:checked)').attr('disabled', "disabled");
 		} else {
-			$('input[type=checkbox]:disabled').removeAttr('disabled');
+			$('.input-checkbox:disabled').removeAttr('disabled');
 		}
 	});
 
@@ -190,9 +189,9 @@
 					showOption(1);
 					hideContent(0);
 					showContent(i);
-					canvas.setOverlayImage('img/circle-form.png', canvas.renderAll.bind(canvas));
-					document.querySelector('.shape-input').value = 'circle';
-					document.querySelector('.visible-shape').innerHTML = "צורה: מעגל";
+					canvas.setOverlayImage('img/circle-bg.png', canvas.renderAll.bind(canvas));
+					document.querySelector('.shape-input').value = 'עיגול';
+					document.querySelector('.visible-shape').innerHTML = "צורה: עיגול";
 
 					document.querySelector('.form-square').style["border-color"] = 'black';
 					document.querySelector('.form-heart').style["fill"] = 'black';
@@ -208,8 +207,8 @@
 						showOption(1);
 						hideContent(0);
 						showContent(i);
-						canvas.setOverlayImage('img/heart-form.png', canvas.renderAll.bind(canvas));
-						document.getElementById('shape-input').value = 'heart';
+						canvas.setOverlayImage('img/heart-bg.png', canvas.renderAll.bind(canvas));
+						document.getElementById('shape-input').value = 'לב';
 						document.querySelector('.visible-shape').innerHTML = "צורה: לב";
 
 						document.querySelector('.form-square').style["border-color"] = 'black';
@@ -226,8 +225,8 @@
 							showOption(1);
 							hideContent(0);
 							showContent(i);
-							canvas.setOverlayImage('img/square-form.png', canvas.renderAll.bind(canvas));
-							document.getElementById('shape-input').value = 'square';
+							canvas.setOverlayImage('img/square-bg.png', canvas.renderAll.bind(canvas));
+							document.getElementById('shape-input').value = 'ריבוע';
 							document.querySelector('.visible-shape').innerHTML = "צורה: ריבוע";
 
 							document.querySelector('.form-heart').style["fill"] = 'black';
@@ -244,7 +243,7 @@
 			let target = event.target.closest('.square-size');
 			if (target && target.classList.contains('square-size')) {
 				for (let i = 0; i < size_content.length; i++) {
-					if (target == size_content[i]) {
+					if ((target == size_content[i]) && (!target.classList.contains('disabled'))) {
 						document.querySelector('.next-btn').classList.remove('hidden');
 						break;
 					}
@@ -254,15 +253,18 @@
 				document.querySelector('.size-input').value = '17 x 17';
 				document.querySelector('.visible-size').innerHTML = "גודל: 17 * 17";
 
-			} else if (target && target.classList.contains('small-size')) {
-				document.querySelector('.size-input').value = '12 x 12';
-				document.querySelector('.visible-size').innerHTML = "גודל: 12 * 12";
-
-			} else if (target && target.classList.contains('medium-size')) {
+			}else if (target && target.classList.contains('medium-size')) {
 				document.querySelector('.size-input').value = '15 x 15';
 				document.querySelector('.visible-size').innerHTML = "גודל: 15 * 15";
 			}
-
+			else if (target && target.classList.contains('small-size')) {
+				document.querySelector('.size-input').value = '12 x 12';
+				document.querySelector('.visible-size').innerHTML = "גודל: 12 * 12";
+			} 
+			if(target && target.classList.contains('disabled')) {
+				document.querySelector('.size-input').value = '';
+				document.querySelector('.visible-size').innerHTML = ':גודל';
+			} 
 		});
 	};
 
@@ -294,15 +296,21 @@
 		hideOption(0);
 		showOption(4);
 	});
-	
+
 	document.querySelector('.back-tp').addEventListener('click', function () {
 		hideOption(0);
 		showOption(2);
+		$('input:checked').prop('checked', false);
 	});
 
 	document.querySelector('.form-back').addEventListener('click', function () {
 		hideOption(0);
 		showOption(0);
+		$('input:checked').prop('checked', false);
+		document.querySelector('.form-heart').style["fill"] = 'black';
+		document.querySelector('.form-circle').style["border-color"] = 'black';
+		document.querySelector('.form-square').style["border-color"] = 'black';
+		canvas.clear();
 	})
 
 	php_form.addEventListener('submit', function () {

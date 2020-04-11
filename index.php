@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html dir="auto" lang="he">
 
 <head>
     <meta charset="UTF-8">
     <title>Chocolate editor</title>
     <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/3.6.1/fabric.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -102,10 +103,10 @@
                                     <div class="form-price">60 ש”ח</div>
                                     <p>102-ב רק 2</p>
                                 </div>
-                                <div class="square-size small-size">
-                                    <input class="visually-hidden input-radio" type="radio" value="small-heart" id="small-heart" name="size-heart">
+                                <div class="square-size small-size disabled">
+                                    <input class="visually-hidden input-radio" type="radio" value="small-heart" id="small-heart" name="size-heart" disabled>
                                     <label for="small-heart">
-                                        <!-- <i class="small-heart far fa-heart" alt="heart-img"></i> -->
+                                        <!-- <i class="medium-heart far fa-heart" alt="heart-img"></i> -->
                                         <svg class="small-heart" version="1.1" id="Layer_2_1_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 198.4 198.4" style="enable-background:new 0 0 198.4 198.4;" xml:space="preserve">
                                             <g>
                                                 <path d="M172.8,46c-1.2-1.5-11.9-13.8-29.7-13.8c-8.7,0-17.7,3-26.8,9.1c-0.5,0.4-11.2,8.1-17.2,15.1c-5.6-7-21.9-24.8-43.6-24.8
@@ -123,7 +124,7 @@
                                             12x12
                                             ס”מ
                                         </span>
-                                    <div class="form-price">50 ש”ח</div>
+                                    <div class="form-price">45 ש”ח</div>
                                     <p>90-ב רק 2</p>
                                 </div>
                             </div>
@@ -194,8 +195,8 @@
                                     <div class="form-price">60 ש”ח</div>
                                     <p>102-ב רק 2</p>
                                 </div>
-                                <div class="square-size small-size">
-                                    <input class="visually-hidden input-radio" type="radio" value="small-circle" id="small-circle" name="size-circle">
+                                <div class="square-size small-size disabled">
+                                    <input class="visually-hidden input-radio" type="radio" value="small-circle" id="small-circle" name="size-circle" disabled>
                                     <label for="small-circle">
                                         <div class="small-circle"></div>
                                     </label>
@@ -226,18 +227,7 @@
                             </a>
                         </div>
                         <!-- <a class="imageSaver" id="imageSaver" href="#">Save image</a>  -->
-
-                        <p>
-                            מקמו את התמונה או חלקה כרצונכם
-                        </p>
-                        <p>
-                            שטח התמונה אשר ישמש לטובת ההדפסה הנו השטח המופיע בתוך המסגרת האפורה
-                        </p>
-                        <div class="btn-wrapper">
-                            <a href="#" class="back-btn btn">חזור</a>
-                            <a href="#" class="tp-link btn">המשך</a>
-                        </div>
-                        <div class="controls-container">
+                        <div class="controls-container hidden">
                             <a class="control-label trash">
                                 <i class="fas fa-trash-alt fa-icon"></i>
                             </a>
@@ -293,7 +283,16 @@
                                     <i class="fab fa-reddit-alien fa-icon"></i>
                                 </label> -->
                         </div>
-
+                        <p>
+                            מקמו את התמונה או חלקה כרצונכם
+                        </p>
+                        <p>
+                            שטח התמונה אשר ישמש לטובת ההדפסה הנו השטח המופיע בתוך המסגרת האפורה
+                        </p>
+                        <div class="btn-wrapper">
+                            <a href="#" class="back-btn btn">חזור</a>
+                            <a href="#" class="tp-link btn">המשך</a>
+                        </div>
                     </li>
                     <li class="option-item hidden option-toppings">
                         <h2>בחר תוספת</h2>
@@ -363,6 +362,7 @@
                                         <img class="visible-img" width="160px" height="160px" src="#">
                                     </div>
                                     <div class="php-params">
+                                        <H2>סיום הזמנה</H2>
                                         <input dir="rtl" class="img-canvas" type='hidden' name='img-canvas' id="img-canvas" value="">
                                         <input dir="rtl" class="shape-input" type='hidden' name='shape-input' id="shape-input" value="shape ">
                                         <input dir="rtl" class="size-input" type='hidden' name='size-input' id="size-input" value="size ">
@@ -379,8 +379,8 @@
                                     </div>
                                 </div>
                                 <div class="btn-controls">
-                                    <a href="#" class="form-back btn">עיצוב אחד נוסף</a>
                                     <input type="submit" class="submit-button btn" value="סיימתי את ההזמנה" id="canvas-form">
+                                    <!-- <a href="#" class="form-back btn">עיצוב אחד נוסף</a> -->
                                 </div>
                             </form>
                         </div>
