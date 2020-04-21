@@ -57,6 +57,8 @@ $img_canvas = $_POST['img-canvas'];
 $img_canvas = str_replace('data:image/png;base64,', '', $img_canvas);
 $img_canvas = str_replace(' ', '+', $img_canvas);
 $data = base64_decode($img_canvas);
+// // $data->scaleImage(800, 800, true);
+// $data->adaptiveResizeImage(1024,768);
 $file = $temp_file . uniqid() . '.png';
 $success = file_put_contents($file, $data);
 
@@ -97,15 +99,15 @@ try {
     $mail->Host       = 'mail.webstickprojects.co.il';                    // Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
     $mail->Username   = 'nicky@webstickprojects.co.il';                     // SMTP username
-    $mail->Password   = 'b.Q64*AY}q.x';                               // SMTP password
+    $mail->Password   = 'Q[07}e#iH9DX';                               // SMTP password
     $mail->SMTPSecure = 'ssl';         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
     $mail->Port       = 465;
     $mail->addAttachment($file);
     $mail->setFrom('nicky@webstickprojects.co.il'); // Адрес самой почты
 
     // Получатель письма
-    $mail->addAddress('nickwebstick@gmail.com'); 
-   //  $mail->addAddress('alinawebstick@gmail.com'); // Ещё один, если нужен
+   //  $mail->addAddress('myshokotlv@gmail.com'); 
+    $mail->addAddress('iukravtsov@gmail.com'); // Ещё один, если нужен
  
 $mail->isHTML(true);                                  // Set email format to HTML
 $mail->Subject = 'shokoladsheli test';

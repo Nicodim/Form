@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/3.6.1/fabric.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/3.6.1/fabric.min.js"></script> -->
+    <script src="http://fabricjs.com/lib/fabric_with_gestures.js"></script>
+    <script src="http://fabricjs.com/lib/prism.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
 
@@ -25,18 +27,25 @@
                             <li class="form-option heart" id="opt-1">
                                 <div class="img-wrapper">
                                     <!-- <i class="form-figure form-heart far fa-heart"></i> -->
-                                    <svg class="form-figure form-heart" version="1.1" id="Layer_2_1_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 198.4 198.4" style="enable-background:new 0 0 198.4 198.4;" xml:space="preserve">
-                                        <g>
-                                            <path d="M172.8,46c-1.2-1.5-11.9-13.8-29.7-13.8c-8.7,0-17.7,3-26.8,9.1c-0.5,0.4-11.2,8.1-17.2,15.1c-5.6-7-21.9-24.8-43.6-24.8
-		c-10.3,0-20.4,4.1-29.9,12.2l-0.2,0.2c-0.3,0.3-7,7.2-10.4,18c-3.2,10-4,25.4,10.3,41.5L98,178.6c0.1,0,0.1,0.1,0.2,0.2
-		c0.1,0,0.2,0.1,0.2,0.1c0.1,0,0.2,0.1,0.3,0.1c0.1,0,0.3,0,0.4,0c0.1,0,0.1,0,0.2,0c0.1,0,0.3-0.1,0.4-0.1c0.1-0.1,0.2-0.1,0.3-0.2
-		c0.1-0.1,0.2-0.2,0.3-0.2l75.4-76.9l0.2-0.2C176.2,101.1,198.6,71.3,172.8,46z M172.1,98.2l-72.9,74.3l-70-72.4
-		C5.4,73.2,27.3,49.3,29,47.5c8.6-7.3,17.5-10.9,26.6-10.9c23.7,0,41.3,25,41.5,25.3l1,1.4c0.1,0.1,0.1,0.1,0.2,0.2
-		c0,0,0.1,0.1,0.1,0.1c0.1,0,0.2,0.1,0.3,0.1c0.1,0,0.2,0.1,0.3,0.1c0,0,0.1,0,0.1,0c0.1,0,0.1,0,0.2,0c0.1,0,0.2,0,0.3,0
-		c0.1-0.1,0.2-0.1,0.3-0.1c0.1-0.1,0.2-0.2,0.3-0.2c0,0,0,0,0.1-0.1l1.1-1.6c4.6-6.9,17.9-16.5,18-16.5c8.1-5.4,16.2-8.2,23.9-8.2
-		c16,0,25.8,12,25.9,12.1l0.2,0.2C191.4,71.2,173.6,96.1,172.1,98.2z" />
+                                    <svg class="form-figure form-heart" version="1.0" xmlns="http://www.w3.org/2000/svg" width="300.000000pt" height="300.000000pt" viewBox="0 0 300.000000 300.000000" preserveAspectRatio="xMidYMid meet">
+
+                                        <g transform="translate(0.000000,300.000000) scale(0.100000,-0.100000)">
+                                            <path d="M755 2969 c-75 -11 -201 -52 -280 -91 -216 -109 -385 -325 -436 -558
+-18 -82 -20 -119 -16 -275 2 -99 9 -193 14 -210 6 -16 16 -55 23 -85 36 -163
+154 -388 298 -566 348 -432 1076 -1163 1159 -1164 40 0 535 475 743 714 52 60
+124 141 160 181 171 188 231 262 307 375 121 181 201 349 229 483 39 189 41
+454 3 597 -58 220 -209 413 -401 513 -138 71 -244 96 -413 97 -144 0 -197 -11
+-292 -58 -87 -43 -121 -69 -184 -137 -64 -70 -94 -117 -130 -200 -14 -33 -32
+-61 -41 -63 -9 -2 -30 30 -62 93 -95 193 -272 329 -459 354 -89 12 -136 12
+-222 0z m1545 -31 c425 -71 682 -424 657 -903 -17 -300 -62 -439 -223 -680
+-110 -163 -186 -256 -478 -580 -282 -313 -700 -715 -743 -715 -40 0 -438 375
+-770 725 -255 269 -365 399 -468 555 -171 257 -226 435 -226 741 0 103 4 194
+11 220 28 108 35 127 61 181 121 251 358 416 654 456 86 12 229 0 305 -25 139
+-47 269 -174 357 -351 31 -62 60 -109 64 -105 4 4 33 58 63 120 93 185 195
+279 377 347 88 34 214 38 359 14z" />
                                         </g>
                                     </svg>
+
                                 </div>
                             </li>
                             <li class="form-option square" id="opt-2">
@@ -73,11 +82,11 @@
                                         </svg>
                                     </label>
                                     <span class="big-heart-size">
-                                            17x17
-                                            ס”מ
-                                        </span>
+                                        17x17
+                                        ס”מ
+                                    </span>
                                     <div class="form-price">70 ש”ח</div>
-                                    <p>112-ב רק 2</p>
+                                    <p dir="rtl">2 רק ב-112</p>
                                 </div>
                                 <div class="square-size medium-size">
                                     <input class="visually-hidden input-radio" type="radio" value="medium-heart" id="medium-heart" name="size-heart">
@@ -97,11 +106,11 @@
                                         </svg>
                                     </label>
                                     <span class="medium-heart-size">
-                                            15x15
-                                            ס”מ
-                                        </span>
+                                        15x15
+                                        ס”מ
+                                    </span>
                                     <div class="form-price">60 ש”ח</div>
-                                    <p>102-ב רק 2</p>
+                                    <p dir="rtl">2 רק ב-102</p>
                                 </div>
                                 <div class="square-size small-size disabled">
                                     <input class="visually-hidden input-radio" type="radio" value="small-heart" id="small-heart" name="size-heart" disabled>
@@ -121,11 +130,11 @@
                                         </svg>
                                     </label>
                                     <span class="small-heart-size">
-                                            12x12
-                                            ס”מ
-                                        </span>
+                                        12x12
+                                        ס”מ
+                                    </span>
                                     <div class="form-price">45 ש”ח</div>
-                                    <p>90-ב רק 2</p>
+                                    <p dir="rtl">2 רק ב-90</p>
                                 </div>
                             </div>
                         </div>
@@ -137,11 +146,11 @@
                                         <div class="big-square"></div>
                                     </label>
                                     <span class="big-square-size">
-                                            17x17
-                                            ס”מ
-                                        </span>
+                                        17x17
+                                        ס”מ
+                                    </span>
                                     <div class="form-price">70 ש”ח</div>
-                                    <p>112-ב רק 2</p>
+                                    <p dir="rtl">2 רק ב-112</p>
                                 </div>
                                 <div class="square-size medium-size">
                                     <input class="visually-hidden input-radio" type="radio" value="medium-square" id="medium-square" name="size-square">
@@ -149,11 +158,11 @@
                                         <div class="medium-square"></div>
                                     </label>
                                     <span class="medium-square-size">
-                                            15x15
-                                            ס”מ
-                                        </span>
+                                        15x15
+                                        ס”מ
+                                    </span>
                                     <div class="form-price">60 ש”ח</div>
-                                    <p>102-ב רק 2</p>
+                                    <p dir="rtl">2 רק ב-102</p>
                                 </div>
                                 <div class="square-size small-size">
                                     <input class="visually-hidden input-radio" type="radio" value="small-square" id="small-square" name="size-square">
@@ -161,11 +170,11 @@
                                         <div class="small-square"></div>
                                     </label>
                                     <span class="small-square-size">
-                                            12x12
-                                            ס”מ
-                                        </span>
+                                        12x12
+                                        ס”מ
+                                    </span>
                                     <div class="form-price">50 ש”ח</div>
-                                    <p>90-ב רק 2</p>
+                                    <p dir="rtl">2 רק ב-90</p>
                                 </div>
                             </div>
                         </div>
@@ -177,11 +186,11 @@
                                         <div class="big-circle"></div>
                                     </label>
                                     <span class="big-circle-size">
-                                            17x17
-                                            ס”מ
-                                        </span>
+                                        17x17
+                                        ס”מ
+                                    </span>
                                     <div class="form-price">70 ש”ח</div>
-                                    <p>112-ב רק 2</p>
+                                    <p dir="rtl">2 רק ב-112</p>
                                 </div>
                                 <div class="square-size medium-size">
                                     <input class="visually-hidden input-radio" type="radio" value="medium-circle" id="medium-circle" name="size-circle">
@@ -189,11 +198,11 @@
                                         <div class="medium-circle"></div>
                                     </label>
                                     <span class="medium-circle-size">
-                                            15x15
-                                            ס”מ
-                                        </span>
+                                        15x15
+                                        ס”מ
+                                    </span>
                                     <div class="form-price">60 ש”ח</div>
-                                    <p>102-ב רק 2</p>
+                                    <p dir="rtl">2 רק ב-102</p>
                                 </div>
                                 <div class="square-size small-size disabled">
                                     <input class="visually-hidden input-radio" type="radio" value="small-circle" id="small-circle" name="size-circle" disabled>
@@ -201,11 +210,11 @@
                                         <div class="small-circle"></div>
                                     </label>
                                     <span class="small-circle-size">
-                                            12x12
-                                            ס”מ
-                                        </span>
+                                        12x12
+                                        ס”מ
+                                    </span>
                                     <div class="form-price">50 ש”ח</div>
-                                    <p>90-ב רק 2</p>
+                                    <p dir="rtl">2 רק ב-90</p>
                                 </div>
                             </div>
                         </div>
@@ -283,12 +292,14 @@
                                     <i class="fab fa-reddit-alien fa-icon"></i>
                                 </label> -->
                         </div>
-                        <p>
-                            מקמו את התמונה או חלקה כרצונכם
-                        </p>
-                        <p>
-                            שטח התמונה אשר ישמש לטובת ההדפסה הנו השטח המופיע בתוך המסגרת האפורה
-                        </p>
+                        <div class="canvas-description">
+                            <p>
+                                מקמו את התמונה או חלקה כרצונכם
+                            </p>
+                            <p>
+                                שטח התמונה אשר ישמש לטובת ההדפסה הנו השטח המופיע בתוך המסגרת האפורה
+                            </p>
+                        </div>
                         <div class="btn-wrapper">
                             <a href="#" class="back-btn btn">חזור</a>
                             <a href="#" class="tp-link btn">המשך</a>
@@ -368,11 +379,11 @@
                                         <input dir="rtl" class="size-input" type='hidden' name='size-input' id="size-input" value="size ">
                                         <input dir="rtl" class="tp-input" type='hidden' name='tp-input' id="tp-input" value="">
 
-                                        <input dir="rtl" type="text" class="form-control h" name="name" placeholder="שם מלא:" required>
+                                        <input dir="rtl" type="text" class="form-control valid h" name="name" placeholder="שם מלא:" required>
 
-                                        <input dir="rtl" type="text" class="form-control h" name="email" placeholder="מייל:" required>
+                                        <input dir="rtl" type="email" class="form-control valid h" name="email" placeholder="מייל:" required>
 
-                                        <input dir="rtl" type="text" class="form-control h" name="phone" placeholder="טלפון:" required>
+                                        <input dir="rtl" type="tel" pattern="^\d{10}$" class="form-control h" name="phone" placeholder="טלפון: xxxxxxxxxx" required>
 
                                         <textarea dir="rtl" name="text" class="form-control" id="exampleFormControlTextarea1" placeholder="הערות:" rows="3"></textarea>
                                         <p>אישור ההזמנה מתבצע לאחר חיוב טלפוני אנו ניצור איתכם קשר בזמן הקרוב לצורך אישור ההזמנה</p>
@@ -380,7 +391,7 @@
                                 </div>
                                 <div class="btn-controls">
                                     <input type="submit" class="submit-button btn" value="סיימתי את ההזמנה" id="canvas-form">
-                                    <!-- <a href="#" class="form-back btn">עיצוב אחד נוסף</a> -->
+                                    <a href="#" class="form-back btn">חזור</a>
                                 </div>
                             </form>
                         </div>

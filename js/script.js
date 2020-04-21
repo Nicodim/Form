@@ -34,10 +34,12 @@
 					// scaleY: 0.8,
 					left: 10,
 					top: 10,
+					borderColor: '#FA245C',
+					cornerColor: '#FA245C',
 				})
 				imgInstance.scaleToHeight(280);
 				imgInstance.scaleToWidth(280);
-				canvas.add(imgInstance);
+				canvas.add(imgInstance).setActiveObject(imgInstance);
 			}
 			img.src = event.target.result;
 		}
@@ -52,12 +54,15 @@
 
 	function Addtext() {
 		let obj = new fabric.IText('Tap and Type', {
-			left: 50,
-			top: 170,
+			left: 35,
+			top: 135,
 			fontFamily: 'arial',
 			fill: '#333',
-			fontSize: 45,
+			fontSize: 35,
 			fontWeight: 'bold',
+			borderColor: '#FA245C',
+			cornerColor: '#FA245C',
+			cornerSize: 15,
 		});
 		canvas.add(obj);
 		canvas.setActiveObject(obj);
@@ -147,6 +152,19 @@
 		}
 	}
 
+	// let valid = document.getElementById('tel')
+	// function phonenumber(inputtxt){
+	//   var phone = /^\d{10}$/;
+	//   if(inputtxt.value.match(phone)){
+	// 	  return true;
+	// 		}else{
+	// 		alert("NOMER ZAPILI PIDOR BL'A");
+	// 		return false;
+	// 		}
+	// }
+
+	// phonenumber(valid)
+
 	// ________________________________________________________________________________delegation
 
 
@@ -207,7 +225,7 @@
 						showOption(1);
 						hideContent(0);
 						showContent(i);
-						canvas.setOverlayImage('img/heart-bg.png', canvas.renderAll.bind(canvas));
+						canvas.setOverlayImage('img/300.png', canvas.renderAll.bind(canvas));
 						document.getElementById('shape-input').value = 'לב';
 						document.querySelector('.visible-shape').innerHTML = "צורה: לב";
 
@@ -250,21 +268,21 @@
 				}
 			}
 			if (target && target.classList.contains('big-size')) {
-				document.querySelector('.size-input').value = '17 x 17';
+				document.querySelector('.size-input').value = '17 * 17';
 				document.querySelector('.visible-size').innerHTML = "גודל: 17 * 17";
 
-			}else if (target && target.classList.contains('medium-size')) {
-				document.querySelector('.size-input').value = '15 x 15';
+			} else if (target && target.classList.contains('medium-size')) {
+				document.querySelector('.size-input').value = '15 * 15';
 				document.querySelector('.visible-size').innerHTML = "גודל: 15 * 15";
 			}
 			else if (target && target.classList.contains('small-size')) {
-				document.querySelector('.size-input').value = '12 x 12';
+				document.querySelector('.size-input').value = '12 * 12';
 				document.querySelector('.visible-size').innerHTML = "גודל: 12 * 12";
-			} 
-			if(target && target.classList.contains('disabled')) {
+			}
+			if (target && target.classList.contains('disabled')) {
 				document.querySelector('.size-input').value = '';
 				document.querySelector('.visible-size').innerHTML = ':גודל';
-			} 
+			}
 		});
 	};
 
@@ -280,14 +298,17 @@
 		document.querySelector('.next-btn').classList.add('hidden');
 		controls_box.classList.remove('show');
 		controls_box.classList.add('hidden');
+		$('input:checked').prop('checked', false);
+		document.querySelector('.form-heart').style["fill"] = 'black';
+		document.querySelector('.form-circle').style["border-color"] = 'black';
+		document.querySelector('.form-square').style["border-color"] = 'black';
 		// canvas.clear();
 	})
 
 	tp_link.addEventListener('click', function () {
-		let dataURL = canvas.toDataURL();
+		let dataURL = canvas.toDataURL({multiplier: 7.5});
 		document.querySelector('.img-canvas').setAttribute("value", dataURL);
 		document.querySelector('.visible-img').src = dataURL;
-		// }
 		hideOption(0);
 		showOption(3);
 	});
@@ -303,14 +324,10 @@
 		$('input:checked').prop('checked', false);
 	});
 
-	document.querySelector('.form-back').addEventListener('click', function () {
+	document.querySelector('.form-back').addEventListener('click', function (event) {
 		hideOption(0);
-		showOption(0);
+		showOption(3);
 		$('input:checked').prop('checked', false);
-		document.querySelector('.form-heart').style["fill"] = 'black';
-		document.querySelector('.form-circle').style["border-color"] = 'black';
-		document.querySelector('.form-square').style["border-color"] = 'black';
-		canvas.clear();
 	})
 
 	php_form.addEventListener('submit', function () {

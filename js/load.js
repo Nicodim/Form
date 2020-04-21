@@ -13,7 +13,6 @@ jQuery(function() {
       processData: false,
       data: new FormData(this),
       success: function(msg) {
-        console.log(msg);
         if (msg == 'ok') {
           alert('Сообщение отправлено');
           jQuery('#form').trigger('reset'); // очистка формы
