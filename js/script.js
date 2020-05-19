@@ -69,6 +69,14 @@
 		canvas.focus(obj);
 	}
 
+	canvas.on('text:editing:entered', function (props) {
+		const text = props.target;
+		text.hiddenTextarea.style.height = text.fontSize + 'px';
+		text.hiddenTextarea.style.width = '0px';
+		text.hiddenTextarea.style['caret-color'] = 'transparent';
+		text.hiddenTextarea.style['font-size'] = '16px';
+	});
+
 	Add_text.addEventListener('click', function () {
 		controls_box.classList.remove('hidden');
 		controls_box.classList.add('show');
@@ -286,11 +294,19 @@
 		});
 	};
 
-
 	next_btn.addEventListener('click', function () {
 		hideOption(0);
 		showOption(2);
+		let parent_origin = 'https://www.shokoladsheli.co.il'
+		parent.postMessage({ 'task': 'scroll_top' }, parent_origin);
 	})
+
+
+	//wix-adaptation
+	// let parent_origin = 'https://www.shokoladsheli.co.il'
+	// let parent_origin = 'https://nick.webstockprojects.co.il'
+	// parent.postMessage({ 'task': 'scroll_top' }, parent_origin);
+	//
 
 	back_btn.addEventListener('click', function () {
 		hideOption(0);
@@ -306,7 +322,7 @@
 	})
 
 	tp_link.addEventListener('click', function () {
-		let dataURL = canvas.toDataURL({multiplier: 7.5});
+		let dataURL = canvas.toDataURL({ multiplier: 4 });
 		document.querySelector('.img-canvas').setAttribute("value", dataURL);
 		document.querySelector('.visible-img').src = dataURL;
 		hideOption(0);
@@ -334,13 +350,14 @@
 		document.php_form.reset();
 	});
 
+	document.querySelector('.submit-button').addEventListener('click', function () {
+		let valid = $('.form-required');
+		if (!valid.value == "") {
+			document.querySelector('.btn-controls').classList.add('visually-hidden');
+			document.querySelector('.spinner').classList.remove('hidden');
+		} 
+	});
 })()
-
-
-
-
-
-
 
 
 

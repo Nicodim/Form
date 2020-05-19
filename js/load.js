@@ -7,7 +7,7 @@ jQuery(function() {
   jQuery('#form').on('submit', function(e) {
     e.preventDefault();
     jQuery.ajax({
-      url: 'send.php',
+      url: 'send.php?v=3',
       type: 'POST',
       contentType: false,
       processData: false,

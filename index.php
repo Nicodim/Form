@@ -5,11 +5,14 @@
     <meta charset="UTF-8">
     <title>Chocolate editor</title>
     <link rel="stylesheet" href="css/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"> -->
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" integrity="sha384-v8BU367qNbs/aIZIxuivaU55N5GPF89WBerHoGA4QTcbUjYiLQtKdrfXnqAcXyTv" crossorigin="anonymous">
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/3.6.1/fabric.min.js"></script> -->
-    <script src="http://fabricjs.com/lib/fabric_with_gestures.js"></script>
-    <script src="http://fabricjs.com/lib/prism.js"></script>
+    <!-- <script src="http://fabricjs.com/lib/fabric_with_gestures.js"></script> -->
+    <!-- <script src="http://fabricjs.com/lib/prism.js"></script> -->
+    <script src="js/gestures.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
 
@@ -260,9 +263,17 @@
                                 </label>
                                 <div class="select">
                                     <select id="font-family">
-                                        <option id="font-selected" value="arial">Arial</option>
-                                        <option id="font-selected" value="helvetica" selected>Helvetica</option>
-                                        <option id="font-selected" value="myriad pro">Myriad Pro</option>
+                                        <option id="font-selected" value="arial" selected>Arial</option>
+                                        <option id="font-selected" value="David">David</option>
+                                        <option id="font-selected" value="Abraham">Abraham</option>
+                                        <option id="font-selected" value="Dina-TalBal">Dina-TalBal</option>
+                                        <option id="font-selected" value="Noot">Noot</option>
+                                        <option id="font-selected" value="Ankaclm">Ankaclm</option>
+                                        <option id="font-selected" value="Dana">Dana</option>
+                                        <option id="font-selected" value="Ganclm">Ganclm</option>
+                                        <option id="font-selected" value="Horevclm">Horevclm</option>
+                                        <!-- <option id="font-selected" value="helvetica" selected>Helvetica</option> 
+                                        <option id="font-selected" value="myriad pro">Myriad Pro</option> 
                                         <option id="font-selected" value="delicious">Delicious</option>
                                         <option id="font-selected" value="verdana">Verdana</option>
                                         <option id="font-selected" value="georgia">Georgia</option>
@@ -273,7 +284,7 @@
                                         <option id="font-selected" value="optima">Optima</option>
                                         <option id="font-selected" value="hoefler text">Hoefler Text</option>
                                         <option id="font-selected" value="plaster">Plaster</option>
-                                        <option id="font-selected" value="engagement">Engagement</option>
+                                        <option id="font-selected" value="engagement">Engagement</option> -->
                                     </select>
                                 </div>
                             </div>
@@ -361,7 +372,7 @@
                     </li>
                     <li class="option-item hidden option-email">
                         <div class="box">
-                            <form class="php-form" enctype='multipart/form-data' action="send.php" method="post">
+                            <form class="php-form" enctype='multipart/form-data' action="send.php?v=7" method="post">
                                 <div class="php-wrapper">
                                     <div class="visible-param">
                                         <h2 dir="rtl">סיכום הזמנה:</h2>
@@ -379,11 +390,11 @@
                                         <input dir="rtl" class="size-input" type='hidden' name='size-input' id="size-input" value="size ">
                                         <input dir="rtl" class="tp-input" type='hidden' name='tp-input' id="tp-input" value="">
 
-                                        <input dir="rtl" type="text" class="form-control valid h" name="name" placeholder="שם מלא:" required>
+                                        <input dir="rtl" type="text" class="form-control form-required valid h" name="name" placeholder="שם מלא:" required>
 
-                                        <input dir="rtl" type="email" class="form-control valid h" name="email" placeholder="מייל:" required>
+                                        <input dir="rtl" type="email" class="form-control form-required valid h" name="email" placeholder="מייל:" required>
 
-                                        <input dir="rtl" type="tel" pattern="^\d{10}$" class="form-control h" name="phone" placeholder="טלפון: xxxxxxxxxx" required>
+                                        <input dir="rtl" type="tel" pattern="^\d{10}$" class="form-control form-required h" name="phone" placeholder="טלפון: xxxxxxxxxx" required>
 
                                         <textarea dir="rtl" name="text" class="form-control" id="exampleFormControlTextarea1" placeholder="הערות:" rows="3"></textarea>
                                         <p>אישור ההזמנה מתבצע לאחר חיוב טלפוני אנו ניצור איתכם קשר בזמן הקרוב לצורך אישור ההזמנה</p>
@@ -394,16 +405,25 @@
                                     <a href="#" class="form-back btn">חזור</a>
                                 </div>
                             </form>
+                            <div class="loadingio-spinner-double-ring-ay6hpatmvvc spinner hidden">
+                                <div class="ldio-0i8pewmokxvr">
+                                    <div></div>
+                                    <div></div>
+                                    <div>
+                                        <div></div>
+                                    </div>
+                                    <div>
+                                        <div></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </li>
                 </ul>
             </div>
     </section>
-    <script src="js/script.js"></script>
-    <script src="js/load.js"></script>
-
-    <!-- <script src="js/delegation.js"></script> -->
-
+    <script src="js/script.js?v=7"></script>
+    <script src="js/load.js?v=7"></script>
 </body>
 
 </html>

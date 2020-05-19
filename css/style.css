@@ -1,3 +1,64 @@
+@font-face {
+	font-family: 'Abraham';
+	src: url('../fonts/Abraham-Regular.eot');
+	src: local('☺'), url('../fonts/Abraham-Regular.woff') format('woff'), url('../fonts/Abraham-Regular.ttf') format('truetype'), url('../fonts/Abraham-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Dina-TalBal';
+	src: url('../fonts/Dina-TalBal.eot');
+	src: local('☺'), url('../fonts/Dina-TalBal.woff') format('woff'), url('../fonts/Dina-TalBal.ttf') format('truetype'), url('../fonts/Dina-TalBal.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Noot';
+	src: url('../fonts/Noot.eot');
+	src: local('☺'), url('../fonts/Noot.woff') format('woff'), url('../fonts/Noot.ttf') format('truetype'), url('../fonts/Noot.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'VarelaRound';
+	src: local('☺'), url('../fonts/VarelaRound-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Ankaclm';
+	src: local('☺'), url('../fonts/ankaclm-bold-webfon.woff') format('woff'), url('../fonts/ankaclm-bold-webfon.ttf') format('truetype');
+	font-weight: bold;
+	font-style: bold;
+}
+
+@font-face {
+	font-family: 'Dana';
+	src: url('../fonts/DanaYadAlefAlefAlef-Normal.eot');
+	src: local('☺'), url('../fonts/DanaYadAlefAlefAlef-Normal.woff') format('woff'), url('../fonts/DanaYadAlefAlefAlef-Normal.ttf') format('truetype'), url('../fonts/DanaYadAlefAlefAlef-Normal.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Ganclm';
+	src: local('☺'), url('../fonts/ganclm_bold-webfont.woff') format('woff'), url('../fonts/ganclm_bold-webfont.ttf') format('truetype');
+	font-weight: bold;
+	font-style: bold;
+}
+
+@font-face {
+	font-family: 'Horevclm';
+	src: local('☺'), url('../fonts/horevclm-heavy-webfont.woff') format('woff'), url('../fonts/horevclm-heavy-webfont.ttf') format('truetype');
+	font-weight: bold;
+	font-style: bold;
+}
+
+
 body {
     background-color: rgb(248, 247, 190);
     font: 400 13.3333px Arial;
@@ -74,7 +135,6 @@ input[type="button"].visually-hidden {
         width: 75%;
         height: 320px;
         display: flex;
-        /* top: 100px; */
         flex-direction: column;
         align-items: center;
         list-style: none;
@@ -110,6 +170,7 @@ input[type="button"].visually-hidden {
 .form-header {
     font-size: 59px;
     margin: 0 auto;
+    margin-bottom: 45px;
     color: #FA245C;
 }
 
@@ -122,6 +183,15 @@ input[type="button"].visually-hidden {
 }
 
 @media only screen and (min-width: 320px) and (max-width: 649px) {
+
+    .hidden {
+        transform: translateY(-50px);
+        -webkit-transform: translateY(-50px);
+        opacity: 0;
+        visibility: hidden;
+        display: none;
+    }
+
     .form-list {
         display: flex;
         list-style: none;
@@ -152,13 +222,24 @@ input[type="button"].visually-hidden {
 
     .form-square {
         position: absolute;
-        width: 93px;
-        height: 93px;
-        left: 53%;
+        width: 125px;
+        height: 125px;
+        left: 7%;
         top: 4%;
-        margin-left: -67px;
-        border: 3px solid black;
+        border: 1px solid black;
         border-radius: 3%;
+        -webkit-transition: all 0.26s ease-out;
+        transition: all 0.26s ease-out;
+    }
+
+    .form-circle {
+        position: absolute;
+        width: 127px;
+        height: 127px;
+        left: 6%;
+        top: 3%;
+        border: 1px solid black;
+        border-radius: 50%;
         -webkit-transition: all 0.26s ease-out;
         transition: all 0.26s ease-out;
     }
@@ -167,13 +248,13 @@ input[type="button"].visually-hidden {
         display: flex;
         flex-direction: column;
         align-items: center;
-        top: 500px;
+        top: 540px;
     }
 
     .size-wrapper {
         display: flex;
         flex-direction: row;
-        width: 320px;
+        width: 310px;
         overflow: hidden;
         cursor: pointer;
         -webkit-transition: all 0.4s ease-out;
@@ -182,14 +263,12 @@ input[type="button"].visually-hidden {
 
     .big-heart {
         position: absolute;
-        width: 110px;
-        height: 110px;
-        left: 36%;
+        width: 105px;
+        height: 105px;
+        left: -7%;
         text-align: center;
         vertical-align: middle;
-        margin-left: -48px;
-        top: 64%;
-        margin-top: -65px;
+        top: 5%;
         -webkit-transition: all 0.26s ease-out;
         transition: all 0.26s ease-out;
     }
@@ -198,7 +277,7 @@ input[type="button"].visually-hidden {
         position: absolute;
         width: 85px;
         height: 85px;
-        left: 61%;
+        left: 58%;
         margin-left: -63px;
         top: 70%;
         margin-top: -65px;
@@ -210,12 +289,10 @@ input[type="button"].visually-hidden {
 
     .big-circle {
         position: absolute;
-        width: 95px;
-        height: 95px;
-        left: 37%;
-        margin-left: -47px;
-        top: 68%;
-        margin-top: -70px;
+        width: 90px;
+        height: 90px;
+        left: -3%;
+        top: 8%;
         border: 2px solid black;
         border-radius: 50%;
         -webkit-transition: all 0.26s ease-out;
@@ -226,12 +303,10 @@ input[type="button"].visually-hidden {
         position: absolute;
         width: 95px;
         height: 95px;
-        left: 46%;
+        left: 1%;
         text-align: center;
         vertical-align: middle;
-        margin-left: -48px;
-        top: 76%;
-        margin-top: -65px;
+        top: 15%;
         -webkit-transition: all 0.26s ease-out;
         transition: all 0.26s ease-out;
     }
@@ -240,7 +315,7 @@ input[type="button"].visually-hidden {
         position: absolute;
         width: 79px;
         height: 79px;
-        left: 52%;
+        left: 50%;
         text-align: center;
         border: 2px solid black;
         vertical-align: middle;
@@ -255,7 +330,7 @@ input[type="button"].visually-hidden {
         position: absolute;
         width: 83px;
         height: 83px;
-        left: 50%;
+        left: 47%;
         border: 2px solid black;
         border-radius: 50%;
         margin-left: -48px;
@@ -269,13 +344,11 @@ input[type="button"].visually-hidden {
         position: absolute;
         width: 80px;
         height: 80px;
-        left: 67%;
+        left: 8%;
         text-align: center;
         font-size: 70px;
         vertical-align: middle;
-        margin-left: -64px;
-        top: 84%;
-        margin-top: -60px;
+        top: 28%;
         -webkit-transition: all 0.26s ease-out;
         transition: all 0.26s ease-out;
     }
@@ -321,8 +394,8 @@ input[type="button"].visually-hidden {
 
     .medium-heart-size {
         position: absolute;
-        top: 55px;
-        left: 32px;
+        top: 58px;
+        left: 31px;
         display: block;
         font-size: 15px;
         width: 55px;
@@ -332,8 +405,8 @@ input[type="button"].visually-hidden {
 
     .small-heart-size {
         position: absolute;
-        top: 65px;
-        left: 39px;
+        top: 68px;
+        left: 38px;
         display: block;
         font-size: 11px;
         width: 40px;
@@ -344,7 +417,7 @@ input[type="button"].visually-hidden {
     .big-square-size {
         position: absolute;
         top: 46px;
-        left: 33px;
+        left: 30px;
         display: block;
         font-size: 18px;
         width: 55px;
@@ -376,8 +449,8 @@ input[type="button"].visually-hidden {
 
     .big-circle-size {
         position: absolute;
-        top: 42px;
-        left: 25px;
+        top: 48px;
+        left: 28px;
         display: block;
         font-size: 18px;
         width: 55px;
@@ -483,8 +556,8 @@ input[type="button"].visually-hidden {
         pointer-events: none;
 
         position: absolute;
-        top: 21px;
-        right: 13px;
+        top: 20px;
+        right: 5px;
         z-index: 1;
         margin-top: -3px;
     }
@@ -497,7 +570,7 @@ input[type="button"].visually-hidden {
         border-radius: 3px;
         -webkit-appearance: none;
         appearance: none;
-
+        margin-left: 5px;
         font-family: inherit;
         font-size: 1rem;
         color: #000;
@@ -528,6 +601,18 @@ input[type="button"].visually-hidden {
         transition: all 0.26s ease-out;
     }
 
+    .form-circle {
+        position: absolute;
+        width: 126px;
+        height: 126px;
+        left: 7%;
+        top: 3%;
+        border: 2px solid black;
+        border-radius: 50%;
+        -webkit-transition: all 0.26s ease-out;
+        transition: all 0.26s ease-out;
+    }
+
     .form-option {
         margin: 0;
 
@@ -537,7 +622,7 @@ input[type="button"].visually-hidden {
         display: flex;
         flex-direction: column;
         align-items: center;
-        top: 215px;
+        top: 275px;
     }
 
     .big-heart {
@@ -737,17 +822,6 @@ input[type="button"].visually-hidden {
         z-index: -100;
     }
 
-    .small-heart-size {
-        position: absolute;
-        top: 84px;
-        left: 69px;
-        display: block;
-        font-size: 11px;
-        width: 40px;
-        text-align: center;
-        z-index: -100;
-    }
-
     .form-price {
         position: absolute;
         display: block;
@@ -828,17 +902,6 @@ input[type="button"].visually-hidden {
     transition: all 0.26s ease-out;
 }
 
-.form-circle {
-    position: absolute;
-    width: 127px;
-    height: 127px;
-    left: 5%;
-    top: 2%;
-    border: 2px solid black;
-    border-radius: 50%;
-    -webkit-transition: all 0.26s ease-out;
-    transition: all 0.26s ease-out;
-}
 
 .form-heart:hover,
 .form-circle:hover,
@@ -1067,18 +1130,19 @@ input[type="button"].visually-hidden {
     flex-wrap: wrap;
 }
 
-.toppings-list li {
-    width: 33%;
-    margin: 0 auto;
-    margin-bottom: 35px;
-}
-
 @media screen and (max-width: 649px) {
+
+    .toppings-list li {
+        width: 50%;
+        margin: 0 auto;
+        margin-bottom: 35px;
+    }
+
     .toppings-list li>label {
         width: 90%;
         margin: 0 auto;
         display: block;
-        height: 34px;
+        padding: 5px 5px;
         position: relative;
         background-color: #FA245C;
         color: white;
@@ -1088,6 +1152,14 @@ input[type="button"].visually-hidden {
 }
 
 @media screen and (min-width: 650px) {
+
+
+    .toppings-list li {
+        width: 33%;
+        margin: 0 auto;
+        margin-bottom: 35px;
+    }
+
     .toppings-list li>label {
         width: 65%;
         font-size: 20px;
@@ -1304,8 +1376,8 @@ input[type="button"].visually-hidden {
         pointer-events: none;
 
         position: absolute;
-        top: 16px;
-        right: -16px;
+        top: 15px;
+        right: 2px;
         z-index: 1;
         margin-top: -3px;
     }
@@ -1497,3 +1569,97 @@ input[type="button"].visually-hidden {
 #thank-you .social a:hover {
     color: #FA245C;
 }
+
+
+@keyframes ldio-0i8pewmokxvr {
+    0% { transform: rotate(0) }
+    100% { transform: rotate(360deg) }
+  }
+  .ldio-0i8pewmokxvr div { box-sizing: border-box!important }
+  .ldio-0i8pewmokxvr > div {
+    position: absolute;
+    width: 79.92px;
+    height: 79.92px;
+    top: 15.540000000000001px;
+    left: 15.540000000000001px;
+    border-radius: 50%;
+    border: 8.88px solid #000;
+    border-color: #fa245c transparent #fa245c transparent;
+    animation: ldio-0i8pewmokxvr 4.761904761904762s linear infinite;
+  }
+  
+  .ldio-0i8pewmokxvr > div:nth-child(2), .ldio-0i8pewmokxvr > div:nth-child(4) {
+    width: 59.940000000000005px;
+    height: 59.940000000000005px;
+    top: 25.53px;
+    left: 25.53px;
+    animation: ldio-0i8pewmokxvr 4.761904761904762s linear infinite reverse;
+  }
+  .ldio-0i8pewmokxvr > div:nth-child(2) {
+    border-color: transparent #ffd2a3 transparent #ffd2a3
+  }
+  .ldio-0i8pewmokxvr > div:nth-child(3) { border-color: transparent }
+  .ldio-0i8pewmokxvr > div:nth-child(3) div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: rotate(45deg);
+  }
+  .ldio-0i8pewmokxvr > div:nth-child(3) div:before, .ldio-0i8pewmokxvr > div:nth-child(3) div:after { 
+    content: "";
+    display: block;
+    position: absolute;
+    width: 8.88px;
+    height: 8.88px;
+    top: -8.88px;
+    left: 26.64px;
+    background: #fa245c;
+    border-radius: 50%;
+    box-shadow: 0 71.04px 0 0 #fa245c;
+  }
+  .ldio-0i8pewmokxvr > div:nth-child(3) div:after {
+    left: -8.88px;
+    top: 26.64px;
+    box-shadow: 71.04px 0 0 0 #fa245c;
+  }
+  
+  .ldio-0i8pewmokxvr > div:nth-child(4) { border-color: transparent; }
+  .ldio-0i8pewmokxvr > div:nth-child(4) div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: rotate(45deg);
+  }
+  .ldio-0i8pewmokxvr > div:nth-child(4) div:before, .ldio-0i8pewmokxvr > div:nth-child(4) div:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 8.88px;
+    height: 8.88px;
+    top: -8.88px;
+    left: 16.650000000000002px;
+    background: #ffd2a3;
+    border-radius: 50%;
+    box-shadow: 0 51.06px 0 0 #ffd2a3;
+  }
+  .ldio-0i8pewmokxvr > div:nth-child(4) div:after {
+    left: -8.88px;
+    top: 16.650000000000002px;
+    box-shadow: 51.06px 0 0 0 #ffd2a3;
+  }
+  .loadingio-spinner-double-ring-ay6hpatmvvc {
+    width: 111px;
+    height: 111px;
+    display: inline-block;
+    overflow: hidden;
+    background: none;
+  }
+  .ldio-0i8pewmokxvr {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform: translateZ(0) scale(1);
+    backface-visibility: hidden;
+    transform-origin: 0 0; /* see note above */
+  }
+  .ldio-0i8pewmokxvr div { box-sizing: content-box; }

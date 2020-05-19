@@ -57,8 +57,6 @@ $img_canvas = $_POST['img-canvas'];
 $img_canvas = str_replace('data:image/png;base64,', '', $img_canvas);
 $img_canvas = str_replace(' ', '+', $img_canvas);
 $data = base64_decode($img_canvas);
-// // $data->scaleImage(800, 800, true);
-// $data->adaptiveResizeImage(1024,768);
 $file = $temp_file . uniqid() . '.png';
 $success = file_put_contents($file, $data);
 
@@ -90,10 +88,8 @@ if(isset($_FILES['image'])){
  }
 
 try { 
-    // $mail->SMTPDebug = SMTP::DEBUG_SERVER;   
     $mail->isSMTP();     
     $mail->CharSet = 'utf-8';
-   //  $mail->SetLanguage('he', PHPMAILER_LANGS);
     $mail->SetLanguage("he");
     // Настройки вашей почты
     $mail->Host       = 'mail.webstickprojects.co.il';                    // Set the SMTP server to send through
@@ -103,14 +99,14 @@ try {
     $mail->SMTPSecure = 'ssl';         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
     $mail->Port       = 465;
     $mail->addAttachment($file);
-    $mail->setFrom('nicky@webstickprojects.co.il'); // Адрес самой почты
+    $mail->setFrom('info@shokoladsheli.co.il'); // Адрес самой почты
 
     // Получатель письма
-   //  $mail->addAddress('myshokotlv@gmail.com'); 
-    $mail->addAddress('iukravtsov@gmail.com'); // Ещё один, если нужен
+    $mail->addAddress('myshokotlv@gmail.com'); 
+   //  $mail->addAddress('nickwebstick@gmail.com'); // Ещё один, если нужен
  
 $mail->isHTML(true);                                  // Set email format to HTML
-$mail->Subject = 'shokoladsheli test';
+$mail->Subject = 'הזמנה חדשה';
 $mail->Body  ='<div dir="rtl">'.$name. '<br>טלפון: ' .$phone. '<br>מייל: ' .$email. '<br>תגובה: ' .$text. '<br>טופס: ' .$shape_input. '<br>גודל: ' .$size_input. '<br>תוספות: ' .$tp_input.'</div>';                   
 
 
@@ -122,3 +118,4 @@ echo file_get_contents("https://nick.webstickprojects.co.il/shokoladsheli/thank-
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
 ?>
+
