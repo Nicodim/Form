@@ -351,11 +351,17 @@
 	});
 
 	document.querySelector('.submit-button').addEventListener('click', function () {
-		let valid = $('.form-required');
-		if (!valid.value == "") {
+		let valid = document.querySelectorAll('.form-required');
+		let empty = false;
+		valid.forEach(e => {
+			if (e.value == "") {
+				empty = true;
+			}
+		});
+		if (!empty) {
 			document.querySelector('.btn-controls').classList.add('visually-hidden');
 			document.querySelector('.spinner').classList.remove('hidden');
-		} 
+		}
 	});
 })()
 
